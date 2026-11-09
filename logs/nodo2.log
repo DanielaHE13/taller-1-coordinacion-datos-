@@ -1,0 +1,25 @@
+[19:25:16] nodo2: activo en el puerto 5000
+[19:25:17] nodo2: reconoce a nodo3 como líder
+[19:28:22] nodo2: recibe solicitud de elección de nodo1
+[19:28:22] nodo2: inicia una elección
+[19:28:22] nodo2: reconoce a nodo2 como líder
+[19:28:22] nodo2: gana la elección
+[19:31:27] nodo2: reconoce a nodo3 como líder
+[20:22:02] nodo2: no recibe latidos del líder 3
+[20:22:02] nodo2: inicia una elección
+[20:22:02] nodo2: reconoce a nodo2 como líder
+[20:22:02] nodo2: gana la elección
+[20:23:28] nodo2: reconoce a nodo3 como líder
+[20:23:51] nodo2: recibe solicitud de elección de nodo1
+[20:23:51] nodo2: inicia una elección
+[20:23:51] nodo2: nodos con ID mayor respondieron: [3]; espera su anuncio
+[20:23:52] nodo2: reconoce a nodo3 como líder
+[20:25:37] nodo2: recibe solicitud de elección de nodo1
+[20:25:37] nodo2: inicia una elección
+[20:25:37] nodo2: reconoce a nodo2 como líder
+[20:25:37] nodo2: gana la elección
+[20:25:50] nodo2: reconoce a nodo3 como líder
+[20:26:09] nodo2: no recibe latidos del líder 3
+[20:26:09] nodo2: inicia una elección
+[20:26:10] nodo2: reconoce a nodo2 como líder
+[20:26:10] nodo2: gana la elección
