@@ -142,11 +142,30 @@ def crear_servidor(nodo):
         def do_POST(self):
             largo = int(self.headers.get("Content-Length", "0"))
             datos = json.loads(self.rfile.read(largo)) if largo else {}
-
             if self.path == "/eleccion":
-                nodo.registrar("recibe una solicitud de elección")
-                nodo.iniciar_eleccion()
-                self.responder(200, {"recibido": True})
+                candidato = datos.get("candidato")
+
+                if (
+                    type(candidato) is not int
+                    or candidato not in NODOS
+                    or candidato >= nodo.id
+                ):
+                    self.responder(400, {"error": "ID de candidato inválido"})
+                    return
+
+                with nodo.lock:
+                    ya_es_lider = nodo.rol == "líder"
+
+                nodo.registrar(f"recibe solicitud de elección de nodo{candidato}")
+
+                if not ya_es_lider:
+                    nodo.iniciar_eleccion()
+
+                self.responder(
+                    200,
+                    {"recibido": True, "lider": nodo.id if ya_es_lider else None},
+                )
+           
 
             elif self.path == "/coordinador":
                 aceptado = nodo.aceptar_lider(datos.get("lider"))
