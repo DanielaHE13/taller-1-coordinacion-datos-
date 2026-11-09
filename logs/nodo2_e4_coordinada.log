@@ -1,0 +1,11 @@
+[23:52:11] nodo2: activo en el puerto 5000
+[23:52:12] nodo2: no recibe latidos del líder None
+[23:52:12] nodo2: inicia una elección
+[23:52:12] nodo2: reconoce a nodo2 como líder
+[23:52:12] nodo2: gana la elección
+[23:52:19] nodo2: reconoce a nodo3 como líder
+[23:53:08] nodo2: no recibe latidos del líder 3
+[23:53:08] nodo2: inicia una elección
+[23:53:08] nodo2: reconoce a nodo2 como líder
+[23:53:08] nodo2: gana la elección
+[23:53:41] nodo2: reconoce a nodo3 como líder
