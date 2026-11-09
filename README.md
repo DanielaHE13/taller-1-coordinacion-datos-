@@ -16,7 +16,7 @@ El proyecto se ejecutará en máquinas virtuales del grupo. Documentaremos las d
 
 - Daniela Huertas
 - Oscar Castillo
-- Sebastian Zaldarriaga
+- Sebastian Saldarriaga
 - Andres Valencia
 - Lorena Rubio
 
@@ -32,11 +32,12 @@ El proyecto se ejecutará en máquinas virtuales del grupo. Documentaremos las d
 
 Completar esta sección cuando el grupo tome las decisiones:
 
-- **Algoritmo de elección:** pendiente de elegir entre algoritmo del matón o elección en anillo.
+- **Algoritmo de elección:** Matón.
 - **Base de datos:** pendiente de elegir entre MongoDB con replica set o Redis con replicación.
 - **Mecanismo de versión:** pendiente de definir.
-- **Regla de resolución de conflictos:** pendiente de definir.
+- **Regla de resolución de conflictos:** gana el nodo activo con el ID más alto.
 - **Lecturas y confirmación de escrituras:** pendiente de documentar.
+- **Identificadores:** nodo1=1, nodo2=2, nodo3=3.
 
 ## Estructura del repositorio
 
