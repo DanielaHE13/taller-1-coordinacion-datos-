@@ -5,4 +5,5 @@ cd "$(dirname "$0")/.."
 [[ -f .env ]] || { echo "Ejecutar primero preparar_inventario.sh"; exit 1; }
 source .env
 mkdir -p logs
-python3 -u coordinador/nodo.py "$1" --inventario 2>&1 | tee -a "logs/nodo1_inventario.log"
+LOG_FILE="logs/nodo${1}_inventario.log"
+python3 -u coordinador/nodo.py "$1" --inventario 2>&1 | tee -a "$LOG_FILE"
