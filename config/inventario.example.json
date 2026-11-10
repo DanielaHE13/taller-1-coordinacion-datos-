@@ -1,0 +1,7 @@
+{
+  "capacity": {"cpu": 2, "memory_mb": 1024, "bandwidth_mbps": 100},
+  "heartbeat_interval": 1.0,
+  "failure_timeout": 5.0,
+  "election_wait": 3.0,
+  "rpc_timeout": 0.7
+}

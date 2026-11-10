@@ -1,0 +1,20 @@
+{
+  ".gitignore": "ef99e4697b1d0d2e46302464546db0c11c3879aea61bf1f6f6bfefb36a7cd44f",
+  "agentes/README.md": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+  "coordinador/nodo.py": "672b655aa846067971490104d442a1badb23cc42448d07da77440cebdc60f708",
+  "coordinador/nodos.json": "6c83992ae6a31989e23efe5d6757216df045a7a69c1a7491bcf5a34ba3578466",
+  "coordinador/README.md": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+  "evidencias/Imagen1.jpeg": "311106cdc2dc0960811c9276656f1c4ec810402139a9c44f1b6c6785f3001050",
+  "evidencias/Imagen2.jpeg": "2d38f463dac5d8870fd6de9230b9b235c899f2dc3c06028ee46e3e5c61f1c0de",
+  "evidencias/README.md": "cdad6dcd375111bb1762191f307e5856df30cbcf083fb5caad0c12a9ca04fdcd",
+  "informe/README.md": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+  "logs/nodo1.log": "b92bfbd5b6ecc0d8da5b8e216bac54934ae16b5b91d8049ddf5b57d908b94e79",
+  "logs/nodo1_e4_coordinada.log": "3a8e4edbdff15d7d9657b56465667355cedb6bb47bcb54e88947b487446772c6",
+  "logs/nodo2.log": "7b8dec443de88e81ea82a477991f3fa0223c6cc8ce915497dcbeab71815d44cc",
+  "logs/nodo2_e4_coordinada.log": "bef5552b931b12aef5480ce6f144458c6c17d79c3b42e72c9880b30d5164b720",
+  "logs/nodo3.log": "80b383f6fd09f01ad9267ccaa905b2fcd2f76f827c08339d7288687205c1c09b",
+  "logs/nodo3_e4_coordinada.log": "b29ac5a58cdb6bf013f98efd17ca94a1fa1b829c4ea8d76c330e2d9ba0d06f66",
+  "logs/README.md": "8caba925d567fdee2a8a9e37635d407dd94ed02ca80235e95aa40ebe9922605f",
+  "README.md": "e6f001bb18fd967b918eda85aac9e2a7846f612231820128e96962b2b2db2718",
+  "scripts/README.md": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+}

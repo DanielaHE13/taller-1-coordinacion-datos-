@@ -190,6 +190,12 @@ def crear_servidor(nodo):
 
 
 def main():
+    if "--inventario" in sys.argv:
+        sys.path.insert(0, str(CARPETA.parent))
+        from coordinador.motor import main_compatible
+        main_compatible()
+        return
+
     if len(sys.argv) != 2:
         print("Uso: python3 nodo.py ID")
         print("Ejemplo: python3 nodo.py 2")

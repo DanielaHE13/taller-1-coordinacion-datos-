@@ -1,0 +1,117 @@
+{"event":"started","node":1,"recovered_operations":0,"time":"2026-11-10T03:02:07.697669+00:00"}
+{"event":"started","node":2,"recovered_operations":0,"time":"2026-11-10T03:02:07.769400+00:00"}
+{"event":"started","node":3,"recovered_operations":0,"time":"2026-11-10T03:02:07.838223+00:00"}
+{"epoch":1,"event":"election_started","node":1,"time":"2026-11-10T03:02:08.922946+00:00"}
+{"epoch":2,"event":"election_started","node":2,"time":"2026-11-10T03:02:08.936366+00:00"}
+{"event":"higher_nodes_answered","node":1,"nodes":[2,3],"time":"2026-11-10T03:02:08.947075+00:00"}
+{"epoch":3,"event":"election_started","node":3,"time":"2026-11-10T03:02:08.949813+00:00"}
+{"event":"higher_nodes_answered","node":2,"nodes":[3],"time":"2026-11-10T03:02:08.952147+00:00"}
+{"epoch":4,"event":"leader_adopted","leader":3,"node":3,"previous":null,"role":"leader","time":"2026-11-10T03:02:09.001753+00:00"}
+{"event":"election_won","node":3,"proof":{"epoch":4,"higher_probes":{},"id":"d0f6e677-3e7d-46f5-921d-bbeb00cf0181","members":[1,2,3],"winner":3},"time":"2026-11-10T03:02:09.003450+00:00"}
+{"epoch":4,"event":"leader_adopted","leader":3,"node":1,"previous":null,"role":"follower","time":"2026-11-10T03:02:09.018563+00:00"}
+{"epoch":4,"event":"leader_adopted","leader":3,"node":2,"previous":null,"role":"follower","time":"2026-11-10T03:02:09.030998+00:00"}
+{"event":"write_accepted","node":3,"operation":{"election":"d0f6e677-3e7d-46f5-921d-bbeb00cf0181","id":"ef0d0ebf-1666-424d-a11f-ef3fae9002bb","lamport":1,"origin":3,"request":{"resource":"node1","seed":true},"resource":"node1","value":{"bandwidth_mbps":100,"cpu":4,"memory_mb":1024},"vv":{"1":0,"2":0,"3":1}},"time":"2026-11-10T03:02:09.062766+00:00"}
+{"event":"write_rejected","leader":3,"node":1,"role":"follower","time":"2026-11-10T03:02:09.226881+00:00"}
+{"event":"leader_claim_rejected","node":2,"reason":"El ganador no pudo acreditar su elecci\u00f3n","sender":1,"time":"2026-11-10T03:02:09.234328+00:00"}
+{"event":"leader_claim_rejected","node":2,"reason":"Comprobante registrado modificado","sender":3,"time":"2026-11-10T03:02:09.236267+00:00"}
+{"event":"backend_or_handoff_error","node":1,"reason":"Partici\u00f3n simulada","time":"2026-11-10T03:02:09.385218+00:00"}
+{"event":"backend_or_handoff_error","node":2,"reason":"Partici\u00f3n simulada","time":"2026-11-10T03:02:09.386023+00:00"}
+{"event":"backend_or_handoff_error","node":2,"reason":"Partici\u00f3n simulada","time":"2026-11-10T03:02:09.531139+00:00"}
+{"event":"backend_or_handoff_error","node":1,"reason":"Partici\u00f3n simulada","time":"2026-11-10T03:02:09.530966+00:00"}
+{"event":"backend_or_handoff_error","node":2,"reason":"Partici\u00f3n simulada","time":"2026-11-10T03:02:09.676422+00:00"}
+{"event":"backend_or_handoff_error","node":1,"reason":"Partici\u00f3n simulada","time":"2026-11-10T03:02:09.676649+00:00"}
+{"event":"backend_or_handoff_error","node":2,"reason":"Partici\u00f3n simulada","time":"2026-11-10T03:02:09.818249+00:00"}
+{"event":"backend_or_handoff_error","node":1,"reason":"Partici\u00f3n simulada","time":"2026-11-10T03:02:09.832422+00:00"}
+{"event":"backend_or_handoff_error","node":2,"reason":"Partici\u00f3n simulada","time":"2026-11-10T03:02:09.952821+00:00"}
+{"event":"backend_or_handoff_error","node":1,"reason":"Partici\u00f3n simulada","time":"2026-11-10T03:02:09.981456+00:00"}
+{"event":"backend_or_handoff_error","node":2,"reason":"Partici\u00f3n simulada","time":"2026-11-10T03:02:10.093996+00:00"}
+{"event":"backend_or_handoff_error","node":1,"reason":"Partici\u00f3n simulada","time":"2026-11-10T03:02:10.115251+00:00"}
+{"event":"backend_or_handoff_error","node":2,"reason":"Partici\u00f3n simulada","time":"2026-11-10T03:02:10.217199+00:00"}
+{"event":"backend_or_handoff_error","node":1,"reason":"Partici\u00f3n simulada","time":"2026-11-10T03:02:10.264518+00:00"}
+{"event":"backend_or_handoff_error","node":2,"reason":"Partici\u00f3n simulada","time":"2026-11-10T03:02:10.368502+00:00"}
+{"event":"backend_or_handoff_error","node":1,"reason":"Partici\u00f3n simulada","time":"2026-11-10T03:02:10.395431+00:00"}
+{"epoch":5,"event":"election_started","node":1,"time":"2026-11-10T03:02:10.407609+00:00"}
+{"epoch":6,"event":"election_started","node":2,"time":"2026-11-10T03:02:10.444986+00:00"}
+{"event":"higher_nodes_answered","node":1,"nodes":[2],"time":"2026-11-10T03:02:10.447782+00:00"}
+{"epoch":7,"event":"leader_adopted","leader":2,"node":2,"previous":null,"role":"leader","time":"2026-11-10T03:02:10.466211+00:00"}
+{"event":"election_won","node":2,"proof":{"epoch":7,"higher_probes":{"3":"unreachable"},"id":"978026a6-5f42-4108-929e-ddbf9b2b1b99","members":[1,2],"winner":2},"time":"2026-11-10T03:02:10.470540+00:00"}
+{"epoch":7,"event":"leader_adopted","leader":2,"node":1,"previous":null,"role":"follower","time":"2026-11-10T03:02:10.499854+00:00"}
+{"event":"write_accepted","node":3,"operation":{"election":"d0f6e677-3e7d-46f5-921d-bbeb00cf0181","id":"5956b775-c3a5-4769-9292-d54aac1a2708","lamport":2,"origin":3,"request":{"amounts":{"bandwidth_mbps":0,"cpu":1,"memory_mb":0},"resource":"node1","seed":false},"resource":"node1","value":{"bandwidth_mbps":100,"cpu":3,"memory_mb":1024},"vv":{"1":0,"2":0,"3":2}},"time":"2026-11-10T03:02:10.531022+00:00"}
+{"event":"write_accepted","node":2,"operation":{"election":"978026a6-5f42-4108-929e-ddbf9b2b1b99","id":"c0d14f92-6ef8-4688-881c-b2a608a8c77d","lamport":3,"origin":2,"request":{"amounts":{"bandwidth_mbps":0,"cpu":2,"memory_mb":0},"resource":"node1","seed":false},"resource":"node1","value":{"bandwidth_mbps":100,"cpu":2,"memory_mb":1024},"vv":{"1":0,"2":1,"3":1}},"time":"2026-11-10T03:02:10.540795+00:00"}
+{"conflict":{"id":"5b5bcbdbd232373748e82fe1eb659d852c40c2f9b44459f0f45ad2661c7b8be1","operations":["5956b775-c3a5-4769-9292-d54aac1a2708","c0d14f92-6ef8-4688-881c-b2a608a8c77d"],"resolved":true,"resource":"node1","rule":"max_lamport_then_min_node_id","winner":"c0d14f92-6ef8-4688-881c-b2a608a8c77d"},"event":"conflict_resolved","node":3,"time":"2026-11-10T03:02:10.611038+00:00"}
+{"epoch":7,"event":"leader_adopted","leader":2,"node":3,"previous":3,"role":"follower","time":"2026-11-10T03:02:10.637047+00:00"}
+{"conflict":{"id":"5b5bcbdbd232373748e82fe1eb659d852c40c2f9b44459f0f45ad2661c7b8be1","operations":["5956b775-c3a5-4769-9292-d54aac1a2708","c0d14f92-6ef8-4688-881c-b2a608a8c77d"],"resolved":true,"resource":"node1","rule":"max_lamport_then_min_node_id","winner":"c0d14f92-6ef8-4688-881c-b2a608a8c77d"},"event":"conflict_resolved","node":2,"time":"2026-11-10T03:02:10.654623+00:00"}
+{"conflict":{"id":"5b5bcbdbd232373748e82fe1eb659d852c40c2f9b44459f0f45ad2661c7b8be1","operations":["5956b775-c3a5-4769-9292-d54aac1a2708","c0d14f92-6ef8-4688-881c-b2a608a8c77d"],"resolved":true,"resource":"node1","rule":"max_lamport_then_min_node_id","winner":"c0d14f92-6ef8-4688-881c-b2a608a8c77d"},"event":"conflict_resolved","node":1,"time":"2026-11-10T03:02:10.693331+00:00"}
+{"event":"write_rejected","leader":2,"node":3,"role":"follower","time":"2026-11-10T03:02:10.704306+00:00"}
+{"event":"leader_claim_rejected","node":2,"reason":"Anuncio de una elecci\u00f3n anterior","sender":3,"time":"2026-11-10T03:02:10.707001+00:00"}
+{"event":"backend_or_handoff_error","node":3,"reason":"<urlopen error timed out>","time":"2026-11-10T03:02:11.104831+00:00"}
+{"event":"backend_or_handoff_error","node":1,"reason":"<urlopen error timed out>","time":"2026-11-10T03:02:11.448719+00:00"}
+{"event":"backend_or_handoff_error","node":3,"reason":"<urlopen error timed out>","time":"2026-11-10T03:02:11.848998+00:00"}
+{"event":"backend_or_handoff_error","node":1,"reason":"<urlopen error timed out>","time":"2026-11-10T03:02:12.188079+00:00"}
+{"epoch":8,"event":"election_started","node":1,"time":"2026-11-10T03:02:12.197524+00:00"}
+{"event":"higher_nodes_answered","node":1,"nodes":[3],"time":"2026-11-10T03:02:12.549122+00:00"}
+{"epoch":9,"event":"election_started","node":3,"time":"2026-11-10T03:02:12.546771+00:00"}
+{"event":"backend_or_handoff_error","node":3,"reason":"<urlopen error timed out>","time":"2026-11-10T03:02:12.578845+00:00"}
+{"epoch":10,"event":"leader_adopted","leader":3,"node":3,"previous":null,"role":"leader","time":"2026-11-10T03:02:12.888015+00:00"}
+{"event":"election_won","node":3,"proof":{"epoch":10,"higher_probes":{},"id":"a24f10a8-ded9-4b48-a704-38e275c23050","members":[1,3],"winner":3},"time":"2026-11-10T03:02:12.890269+00:00"}
+{"epoch":10,"event":"leader_adopted","leader":3,"node":1,"previous":null,"role":"follower","time":"2026-11-10T03:02:12.914823+00:00"}
+{"event":"backend_or_handoff_error","node":1,"reason":"<urlopen error [WinError 10054] An existing connection was forcibly closed by the remote host>","time":"2026-11-10T03:02:13.050027+00:00"}
+test_election_partition_conflicts_rejoin_and_rejections (pruebas.test_cluster.ClusterTests.test_election_partition_conflicts_rejoin_and_rejections) ... ok
+test_adaptador_utiliza_host_y_puerto_existentes (pruebas.test_compatibilidad.CompatibilidadTests.test_adaptador_utiliza_host_y_puerto_existentes) ... ok
+test_comando_ampliado_reconoce_la_opcion_sin_arrancar_servicios (pruebas.test_compatibilidad.CompatibilidadTests.test_comando_ampliado_reconoce_la_opcion_sin_arrancar_servicios) ... ok
+{"event":"started","node":3,"recovered_operations":0,"time":"2026-11-10T03:02:14.713688+00:00"}
+{"epoch":2,"event":"leader_adopted","leader":3,"node":3,"previous":null,"role":"leader","time":"2026-11-10T03:02:14.723451+00:00"}
+{"event":"started","node":3,"recovered_operations":0,"time":"2026-11-10T03:02:14.793012+00:00"}
+{"epoch":4,"event":"leader_adopted","leader":2,"node":3,"previous":null,"role":"follower","time":"2026-11-10T03:02:14.814059+00:00"}
+test_nuevo_nodo_mayor_compite_pero_recuperado_acepta_nueva_epoca (pruebas.test_compatibilidad.CompatibilidadTests.test_nuevo_nodo_mayor_compite_pero_recuperado_acepta_nueva_epoca) ... ok
+[22:02:14] nodo1: reconoce a nodo3 como l�der
+test_ruta_estado_del_coordinador_original (pruebas.test_compatibilidad.CompatibilidadTests.test_ruta_estado_del_coordinador_original) ... ok
+[22:02:15] nodo3: inicia una elecci�n
+[22:02:15] nodo3: reconoce a nodo3 como l�der
+[22:02:15] nodo3: gana la elecci�n
+[22:02:15] nodo1: reconoce a nodo3 como l�der
+[22:02:15] nodo2: reconoce a nodo3 como l�der
+[22:02:15] nodo2: inicia una elecci�n
+[22:02:15] nodo2: reconoce a nodo2 como l�der
+[22:02:15] nodo2: gana la elecci�n
+[22:02:15] nodo1: reconoce a nodo2 como l�der
+[22:02:15] nodo3: inicia una elecci�n
+[22:02:15] nodo3: reconoce a nodo3 como l�der
+[22:02:15] nodo3: gana la elecci�n
+[22:02:15] nodo1: reconoce a nodo3 como l�der
+[22:02:15] nodo2: reconoce a nodo3 como l�der
+test_eleccion_original_caida_y_regreso_del_mayor (pruebas.test_regresion.RegresionTests.test_eleccion_original_caida_y_regreso_del_mayor) ... ok
+test_logica_original_se_conserva (pruebas.test_regresion.RegresionTests.test_logica_original_se_conserva) ... ok
+{"event":"started","node":1,"recovered_operations":0,"time":"2026-11-10T03:02:15.508795+00:00"}
+{"epoch":1,"event":"election_started","node":1,"time":"2026-11-10T03:02:16.361470+00:00"}
+{"epoch":2,"event":"leader_adopted","leader":1,"node":1,"previous":null,"role":"leader","time":"2026-11-10T03:02:16.785157+00:00"}
+{"event":"election_won","node":1,"proof":{"epoch":2,"higher_probes":{"2":"unreachable","3":"unreachable"},"id":"939c2fac-dfa4-4d9d-86ca-130db2cb6b67","members":[1],"winner":1},"time":"2026-11-10T03:02:16.787217+00:00"}
+{"event":"started","node":2,"recovered_operations":0,"time":"2026-11-10T03:02:16.898508+00:00"}
+{"event":"leader_claim_rejected","node":2,"reason":"Un nodo nuevo de mayor ID debe participar en la elecci\u00f3n","sender":1,"time":"2026-11-10T03:02:17.008115+00:00"}
+{"event":"leader_claim_rejected","node":2,"reason":"Un nodo nuevo de mayor ID debe participar en la elecci\u00f3n","sender":1,"time":"2026-11-10T03:02:17.529366+00:00"}
+{"epoch":3,"event":"election_started","node":2,"time":"2026-11-10T03:02:17.727173+00:00"}
+{"epoch":4,"event":"leader_adopted","leader":2,"node":2,"previous":null,"role":"leader","time":"2026-11-10T03:02:17.970858+00:00"}
+{"event":"election_won","node":2,"proof":{"epoch":4,"higher_probes":{"3":"unreachable"},"id":"3e1ba97c-6a99-49aa-a9cc-4305fd87ca2d","members":[1,2],"winner":2},"time":"2026-11-10T03:02:17.973056+00:00"}
+{"epoch":4,"event":"leader_adopted","leader":2,"node":1,"previous":1,"role":"follower","time":"2026-11-10T03:02:17.988755+00:00"}
+{"event":"started","node":3,"recovered_operations":0,"time":"2026-11-10T03:02:18.125796+00:00"}
+{"event":"leader_claim_rejected","node":3,"reason":"Un nodo nuevo de mayor ID debe participar en la elecci\u00f3n","sender":2,"time":"2026-11-10T03:02:18.409797+00:00"}
+{"event":"leader_claim_rejected","node":3,"reason":"Un nodo nuevo de mayor ID debe participar en la elecci\u00f3n","sender":2,"time":"2026-11-10T03:02:18.573828+00:00"}
+{"event":"leader_claim_rejected","node":3,"reason":"Un nodo nuevo de mayor ID debe participar en la elecci\u00f3n","sender":2,"time":"2026-11-10T03:02:18.699224+00:00"}
+{"event":"leader_claim_rejected","node":3,"reason":"Un nodo nuevo de mayor ID debe participar en la elecci\u00f3n","sender":2,"time":"2026-11-10T03:02:18.849467+00:00"}
+{"epoch":5,"event":"election_started","node":3,"time":"2026-11-10T03:02:18.921492+00:00"}
+{"epoch":6,"event":"leader_adopted","leader":3,"node":3,"previous":null,"role":"leader","time":"2026-11-10T03:02:18.953647+00:00"}
+{"event":"election_won","node":3,"proof":{"epoch":6,"higher_probes":{},"id":"80c16a78-7fe8-44b1-9cbf-160488c39ea7","members":[1,2,3],"winner":3},"time":"2026-11-10T03:02:18.955705+00:00"}
+{"epoch":6,"event":"leader_adopted","leader":3,"node":1,"previous":2,"role":"follower","time":"2026-11-10T03:02:18.978685+00:00"}
+{"epoch":6,"event":"leader_adopted","leader":3,"node":2,"previous":2,"role":"follower","time":"2026-11-10T03:02:18.998156+00:00"}
+test_nodos_nuevos_de_mayor_id_se_incorporan_en_orden (pruebas.test_regresion.RegresionTests.test_nodos_nuevos_de_mayor_id_se_incorporan_en_orden) ... ok
+test_verificar_convergencia_no_oculta_falta_de_conflicto_o_redis (pruebas.test_regresion.RegresionTests.test_verificar_convergencia_no_oculta_falta_de_conflicto_o_redis) ... ok
+test_all_message_orders_converge_and_keep_original_vectors (pruebas.test_versiones.VersionTests.test_all_message_orders_converge_and_keep_original_vectors) ... ok
+test_causality_and_concurrency (pruebas.test_versiones.VersionTests.test_causality_and_concurrency) ... ok
+test_journal_survives_restart_and_deduplicates_conflicts (pruebas.test_versiones.VersionTests.test_journal_survives_restart_and_deduplicates_conflicts) ... ok
+test_tie_uses_smaller_node_id (pruebas.test_versiones.VersionTests.test_tie_uses_smaller_node_id) ... ok
+test_write_after_resolution_dominates_both_branches (pruebas.test_versiones.VersionTests.test_write_after_resolution_dominates_both_branches) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 11.945s
+
+OK
