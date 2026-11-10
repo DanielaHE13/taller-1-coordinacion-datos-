@@ -14,7 +14,7 @@ Aquí se evidencia la conexión del Nodo 3 con el Nodo 2 y con el Nodo 1:
 
 **Conexiones desde el Nodo 2:**
 - Hacia el Nodo 1:
-  ![Conexión de Nodo 2 a Nodo 1](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen%203.jpeg)
+  ![Conexión de Nodo 2 a Nodo 1](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen3.jpeg)
 - Hacia el Nodo 3:
   ![Conexión de Nodo 2 a Nodo 3](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen4.jpeg)
 
