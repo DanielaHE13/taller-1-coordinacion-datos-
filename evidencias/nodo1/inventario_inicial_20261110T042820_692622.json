@@ -1,0 +1,302 @@
+{
+  "fase": "inventario_inicial",
+  "hora_utc": "2026-11-10T04:28:20.548382+00:00",
+  "nodos": {
+    "1": {
+      "estado": {
+        "conflictos_detectados": 0,
+        "conflictos_resueltos": 0,
+        "epoca": 6,
+        "inventario_habilitado": true,
+        "journal_hash": "fe0912aa05614282e05d8ffa734df38250e8cbe4912c4d7bb658b3b4c16bf2ef",
+        "lider": 3,
+        "nodo": 1,
+        "operaciones": 3,
+        "rol": "seguidor"
+      },
+      "inventario": {
+        "backend": {
+          "connected_slaves": "0",
+          "master_failover_state": "no-failover",
+          "master_host": "100.98.74.61",
+          "master_last_io_seconds_ago": "0",
+          "master_link_status": "up",
+          "master_port": "6379",
+          "master_repl_offset": "1084269",
+          "master_replid": "090f9e25a17d334b86a11e563c4c23ed9bc4843b",
+          "master_replid2": "dc60fd753813d88735b6926ee38821ad208f83db",
+          "master_sync_in_progress": "0",
+          "repl_backlog_active": "1",
+          "repl_backlog_first_byte_offset": "27461",
+          "repl_backlog_histlen": "1056809",
+          "repl_backlog_size": "1048576",
+          "replica_announced": "1",
+          "replica_full_sync_buffer_peak": "0",
+          "replica_full_sync_buffer_size": "0",
+          "role": "slave",
+          "second_repl_offset": "230147",
+          "slave_priority": "100",
+          "slave_read_only": "1",
+          "slave_read_repl_offset": "1084269",
+          "slave_repl_offset": "1084269"
+        },
+        "inventory": {
+          "node1": {
+            "available": {
+              "bandwidth_mbps": 100,
+              "cpu": 2,
+              "memory_mb": 1024
+            },
+            "context": {
+              "1": 0,
+              "2": 0,
+              "3": 1
+            },
+            "frontier": [
+              "f18c0020-3743-4f9b-80e4-2be73ba077ad"
+            ],
+            "winner_lamport": 1,
+            "winner_node": 3,
+            "winner_operation": "f18c0020-3743-4f9b-80e4-2be73ba077ad"
+          },
+          "node2": {
+            "available": {
+              "bandwidth_mbps": 100,
+              "cpu": 2,
+              "memory_mb": 1024
+            },
+            "context": {
+              "1": 0,
+              "2": 0,
+              "3": 1
+            },
+            "frontier": [
+              "786dd152-8990-4917-98d0-13a092f628bd"
+            ],
+            "winner_lamport": 2,
+            "winner_node": 3,
+            "winner_operation": "786dd152-8990-4917-98d0-13a092f628bd"
+          },
+          "node3": {
+            "available": {
+              "bandwidth_mbps": 100,
+              "cpu": 2,
+              "memory_mb": 1024
+            },
+            "context": {
+              "1": 0,
+              "2": 0,
+              "3": 1
+            },
+            "frontier": [
+              "b03efafd-7ead-4607-82cc-bb2b82f6b6d7"
+            ],
+            "winner_lamport": 3,
+            "winner_node": 3,
+            "winner_operation": "b03efafd-7ead-4607-82cc-bb2b82f6b6d7"
+          }
+        },
+        "inventory_hash": "d19a790aba51c64e8e24a5881ae9cbce4d99bdc4a3f1b88670c40aa4a1c2e63f",
+        "node": 1,
+        "source": "local_redis"
+      },
+      "conflictos": {
+        "conflicts": []
+      }
+    },
+    "2": {
+      "estado": {
+        "conflictos_detectados": 0,
+        "conflictos_resueltos": 0,
+        "epoca": 6,
+        "inventario_habilitado": true,
+        "journal_hash": "fe0912aa05614282e05d8ffa734df38250e8cbe4912c4d7bb658b3b4c16bf2ef",
+        "lider": 3,
+        "nodo": 2,
+        "operaciones": 3,
+        "rol": "seguidor"
+      },
+      "inventario": {
+        "backend": {
+          "connected_slaves": "0",
+          "master_failover_state": "no-failover",
+          "master_host": "100.98.74.61",
+          "master_last_io_seconds_ago": "0",
+          "master_link_status": "up",
+          "master_port": "6379",
+          "master_repl_offset": "1084269",
+          "master_replid": "090f9e25a17d334b86a11e563c4c23ed9bc4843b",
+          "master_replid2": "dc60fd753813d88735b6926ee38821ad208f83db",
+          "master_sync_in_progress": "0",
+          "repl_backlog_active": "1",
+          "repl_backlog_first_byte_offset": "20464",
+          "repl_backlog_histlen": "1063806",
+          "repl_backlog_size": "1048576",
+          "replica_announced": "1",
+          "replica_full_sync_buffer_peak": "0",
+          "replica_full_sync_buffer_size": "0",
+          "role": "slave",
+          "second_repl_offset": "230147",
+          "slave_priority": "100",
+          "slave_read_only": "1",
+          "slave_read_repl_offset": "1084269",
+          "slave_repl_offset": "1084269"
+        },
+        "inventory": {
+          "node1": {
+            "available": {
+              "bandwidth_mbps": 100,
+              "cpu": 2,
+              "memory_mb": 1024
+            },
+            "context": {
+              "1": 0,
+              "2": 0,
+              "3": 1
+            },
+            "frontier": [
+              "f18c0020-3743-4f9b-80e4-2be73ba077ad"
+            ],
+            "winner_lamport": 1,
+            "winner_node": 3,
+            "winner_operation": "f18c0020-3743-4f9b-80e4-2be73ba077ad"
+          },
+          "node2": {
+            "available": {
+              "bandwidth_mbps": 100,
+              "cpu": 2,
+              "memory_mb": 1024
+            },
+            "context": {
+              "1": 0,
+              "2": 0,
+              "3": 1
+            },
+            "frontier": [
+              "786dd152-8990-4917-98d0-13a092f628bd"
+            ],
+            "winner_lamport": 2,
+            "winner_node": 3,
+            "winner_operation": "786dd152-8990-4917-98d0-13a092f628bd"
+          },
+          "node3": {
+            "available": {
+              "bandwidth_mbps": 100,
+              "cpu": 2,
+              "memory_mb": 1024
+            },
+            "context": {
+              "1": 0,
+              "2": 0,
+              "3": 1
+            },
+            "frontier": [
+              "b03efafd-7ead-4607-82cc-bb2b82f6b6d7"
+            ],
+            "winner_lamport": 3,
+            "winner_node": 3,
+            "winner_operation": "b03efafd-7ead-4607-82cc-bb2b82f6b6d7"
+          }
+        },
+        "inventory_hash": "d19a790aba51c64e8e24a5881ae9cbce4d99bdc4a3f1b88670c40aa4a1c2e63f",
+        "node": 2,
+        "source": "local_redis"
+      },
+      "conflictos": {
+        "conflicts": []
+      }
+    },
+    "3": {
+      "estado": {
+        "conflictos_detectados": 0,
+        "conflictos_resueltos": 0,
+        "epoca": 6,
+        "inventario_habilitado": true,
+        "journal_hash": "fe0912aa05614282e05d8ffa734df38250e8cbe4912c4d7bb658b3b4c16bf2ef",
+        "lider": 3,
+        "nodo": 3,
+        "operaciones": 3,
+        "rol": "líder"
+      },
+      "inventario": {
+        "backend": {
+          "connected_slaves": "2",
+          "master_failover_state": "no-failover",
+          "master_repl_offset": "1084269",
+          "master_replid": "090f9e25a17d334b86a11e563c4c23ed9bc4843b",
+          "master_replid2": "dc60fd753813d88735b6926ee38821ad208f83db",
+          "repl_backlog_active": "1",
+          "repl_backlog_first_byte_offset": "29824",
+          "repl_backlog_histlen": "1054446",
+          "repl_backlog_size": "1048576",
+          "role": "master",
+          "second_repl_offset": "230147",
+          "slave0": "ip=100.101.47.119,port=6379,state=online,offset=1083489,lag=0",
+          "slave1": "ip=100.92.63.103,port=6379,state=online,offset=1083489,lag=0"
+        },
+        "inventory": {
+          "node1": {
+            "available": {
+              "bandwidth_mbps": 100,
+              "cpu": 2,
+              "memory_mb": 1024
+            },
+            "context": {
+              "1": 0,
+              "2": 0,
+              "3": 1
+            },
+            "frontier": [
+              "f18c0020-3743-4f9b-80e4-2be73ba077ad"
+            ],
+            "winner_lamport": 1,
+            "winner_node": 3,
+            "winner_operation": "f18c0020-3743-4f9b-80e4-2be73ba077ad"
+          },
+          "node2": {
+            "available": {
+              "bandwidth_mbps": 100,
+              "cpu": 2,
+              "memory_mb": 1024
+            },
+            "context": {
+              "1": 0,
+              "2": 0,
+              "3": 1
+            },
+            "frontier": [
+              "786dd152-8990-4917-98d0-13a092f628bd"
+            ],
+            "winner_lamport": 2,
+            "winner_node": 3,
+            "winner_operation": "786dd152-8990-4917-98d0-13a092f628bd"
+          },
+          "node3": {
+            "available": {
+              "bandwidth_mbps": 100,
+              "cpu": 2,
+              "memory_mb": 1024
+            },
+            "context": {
+              "1": 0,
+              "2": 0,
+              "3": 1
+            },
+            "frontier": [
+              "b03efafd-7ead-4607-82cc-bb2b82f6b6d7"
+            ],
+            "winner_lamport": 3,
+            "winner_node": 3,
+            "winner_operation": "b03efafd-7ead-4607-82cc-bb2b82f6b6d7"
+          }
+        },
+        "inventory_hash": "d19a790aba51c64e8e24a5881ae9cbce4d99bdc4a3f1b88670c40aa4a1c2e63f",
+        "node": 3,
+        "source": "local_redis"
+      },
+      "conflictos": {
+        "conflicts": []
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{"event":"started","node":1,"recovered_operations":0,"time":"2026-11-10T03:59:08.608487+00:00"}
+{"epoch":2,"event":"leader_adopted","leader":3,"node":1,"previous":null,"role":"follower","time":"2026-11-10T03:59:08.634199+00:00"}
+{"epoch":4,"event":"leader_adopted","leader":2,"node":1,"previous":3,"role":"follower","time":"2026-11-10T04:02:15.532844+00:00"}
+{"event":"leader_claim_rejected","node":1,"reason":"Anuncio de una elecci\u00f3n anterior","sender":3,"time":"2026-11-10T04:02:17.186025+00:00"}
+{"event":"leader_claim_rejected","node":1,"reason":"Anuncio de una elecci\u00f3n anterior","sender":3,"time":"2026-11-10T04:02:19.381752+00:00"}
+{"event":"backend_or_handoff_error","node":1,"reason":"<urlopen error timed out>","time":"2026-11-10T04:06:13.311332+00:00"}
+{"event":"backend_or_handoff_error","node":1,"reason":"<urlopen error timed out>","time":"2026-11-10T04:06:15.718984+00:00"}
+{"event":"backend_or_handoff_error","node":1,"reason":"<urlopen error [Errno 111] Connection refused>","time":"2026-11-10T04:07:47.759621+00:00"}
+{"event":"backend_or_handoff_error","node":1,"reason":"<urlopen error [Errno 111] Connection refused>","time":"2026-11-10T04:07:48.793188+00:00"}
+{"event":"backend_or_handoff_error","node":1,"reason":"<urlopen error [Errno 111] Connection refused>","time":"2026-11-10T04:07:49.834589+00:00"}
+{"event":"backend_or_handoff_error","node":1,"reason":"<urlopen error [Errno 111] Connection refused>","time":"2026-11-10T04:07:50.873795+00:00"}
+{"event":"backend_or_handoff_error","node":1,"reason":"<urlopen error [Errno 111] Connection refused>","time":"2026-11-10T04:07:51.914517+00:00"}
+{"epoch":6,"event":"leader_adopted","leader":3,"node":1,"previous":2,"role":"follower","time":"2026-11-10T04:07:52.904585+00:00"}
+{"event":"write_rejected","leader":3,"node":1,"role":"follower","time":"2026-11-10T04:31:13.725173+00:00"}
+{"event":"backend_or_handoff_error","node":1,"reason":"<urlopen error timed out>","time":"2026-11-10T04:38:49.058938+00:00"}
+{"event":"backend_or_handoff_error","node":1,"reason":"<urlopen error timed out>","time":"2026-11-10T04:38:51.468768+00:00"}
+{"epoch":8,"event":"leader_adopted","leader":2,"node":1,"previous":3,"role":"follower","time":"2026-11-10T04:38:52.743328+00:00"}
+{"event":"leader_claim_rejected","node":1,"reason":"Anuncio de una elecci\u00f3n anterior","sender":3,"time":"2026-11-10T04:45:48.874024+00:00"}
+{"conflict":{"id":"35dbbaf49bbbccf53e88ade2ec7f581db4ba1cb4001e3f948ad2bbc90ee3d6e4","operations":["0c8f4647-b364-4f02-a448-e4e0ba5e58c3","9fb86ad1-1161-490b-9c50-5d9d143bcf14"],"resolved":true,"resource":"node1","rule":"max_lamport_then_min_node_id","winner":"9fb86ad1-1161-490b-9c50-5d9d143bcf14"},"event":"conflict_resolved","node":1,"time":"2026-11-10T04:45:49.982782+00:00"}
+{"event":"backend_or_handoff_error","node":1,"reason":"<urlopen error timed out>","time":"2026-11-10T04:48:43.556641+00:00"}
