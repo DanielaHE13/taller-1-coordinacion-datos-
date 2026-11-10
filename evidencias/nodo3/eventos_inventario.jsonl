@@ -1,0 +1,24 @@
+{"event":"started","node":3,"recovered_operations":0,"time":"2026-11-10T03:58:41.922153+00:00"}
+{"epoch":1,"event":"election_started","node":3,"time":"2026-11-10T03:58:47.930380+00:00"}
+{"epoch":2,"event":"leader_adopted","leader":3,"node":3,"previous":null,"role":"leader","time":"2026-11-10T03:58:48.066624+00:00"}
+{"event":"election_won","node":3,"proof":{"epoch":2,"higher_probes":{},"id":"d8b036f9-1d47-49db-b683-87586109080e","members":[3],"winner":3},"time":"2026-11-10T03:58:48.070173+00:00"}
+{"event":"write_accepted","node":3,"operation":{"election":"d8b036f9-1d47-49db-b683-87586109080e","id":"f18c0020-3743-4f9b-80e4-2be73ba077ad","lamport":1,"origin":3,"request":{"resource":"node1","seed":true},"resource":"node1","value":{"bandwidth_mbps":100,"cpu":2,"memory_mb":1024},"vv":{"1":0,"2":0,"3":1}},"time":"2026-11-10T04:02:11.485947+00:00"}
+{"event":"write_accepted","node":3,"operation":{"election":"d8b036f9-1d47-49db-b683-87586109080e","id":"786dd152-8990-4917-98d0-13a092f628bd","lamport":2,"origin":3,"request":{"resource":"node2","seed":true},"resource":"node2","value":{"bandwidth_mbps":100,"cpu":2,"memory_mb":1024},"vv":{"1":0,"2":0,"3":1}},"time":"2026-11-10T04:02:11.499055+00:00"}
+{"event":"write_accepted","node":3,"operation":{"election":"d8b036f9-1d47-49db-b683-87586109080e","id":"b03efafd-7ead-4607-82cc-bb2b82f6b6d7","lamport":3,"origin":3,"request":{"resource":"node3","seed":true},"resource":"node3","value":{"bandwidth_mbps":100,"cpu":2,"memory_mb":1024},"vv":{"1":0,"2":0,"3":1}},"time":"2026-11-10T04:02:11.510214+00:00"}
+{"epoch":4,"event":"leader_adopted","leader":2,"node":3,"previous":3,"role":"follower","time":"2026-11-10T04:02:20.614779+00:00"}
+{"event":"backend_or_handoff_error","node":3,"reason":"timed out","time":"2026-11-10T04:02:21.663029+00:00"}
+{"event":"backend_or_handoff_error","node":3,"reason":"<urlopen error timed out>","time":"2026-11-10T04:06:12.481345+00:00"}
+{"event":"backend_or_handoff_error","node":3,"reason":"<urlopen error timed out>","time":"2026-11-10T04:06:14.934989+00:00"}
+{"event":"backend_or_handoff_error","node":3,"reason":"<urlopen error [Errno 111] Connection refused>","time":"2026-11-10T04:07:48.376327+00:00"}
+{"event":"backend_or_handoff_error","node":3,"reason":"<urlopen error [Errno 111] Connection refused>","time":"2026-11-10T04:07:49.418402+00:00"}
+{"event":"backend_or_handoff_error","node":3,"reason":"<urlopen error [Errno 111] Connection refused>","time":"2026-11-10T04:07:50.523735+00:00"}
+{"event":"backend_or_handoff_error","node":3,"reason":"<urlopen error [Errno 111] Connection refused>","time":"2026-11-10T04:07:51.718588+00:00"}
+{"event":"backend_or_handoff_error","node":3,"reason":"<urlopen error [Errno 111] Connection refused>","time":"2026-11-10T04:07:52.807258+00:00"}
+{"epoch":5,"event":"election_started","node":3,"time":"2026-11-10T04:07:52.814138+00:00"}
+{"epoch":6,"event":"leader_adopted","leader":3,"node":3,"previous":null,"role":"leader","time":"2026-11-10T04:07:52.843531+00:00"}
+{"event":"election_won","node":3,"proof":{"epoch":6,"higher_probes":{},"id":"55b6a0f5-137d-4af1-87e5-ea1f76249bcd","members":[1,3],"winner":3},"time":"2026-11-10T04:07:52.847251+00:00"}
+{"event":"write_accepted","node":3,"operation":{"election":"55b6a0f5-137d-4af1-87e5-ea1f76249bcd","id":"7c8091c2-284e-42a7-a4a4-4e0189933d0c","lamport":4,"origin":3,"request":{"amounts":{"bandwidth_mbps":0,"cpu":0,"memory_mb":64},"resource":"node1","seed":false},"resource":"node1","value":{"bandwidth_mbps":100,"cpu":2,"memory_mb":960},"vv":{"1":0,"2":0,"3":2}},"time":"2026-11-10T04:29:54.089710+00:00"}
+{"event":"write_accepted","node":3,"operation":{"election":"55b6a0f5-137d-4af1-87e5-ea1f76249bcd","id":"0c8f4647-b364-4f02-a448-e4e0ba5e58c3","lamport":5,"origin":3,"request":{"amounts":{"bandwidth_mbps":0,"cpu":1,"memory_mb":0},"resource":"node1","seed":false},"resource":"node1","value":{"bandwidth_mbps":100,"cpu":1,"memory_mb":960},"vv":{"1":0,"2":0,"3":3}},"time":"2026-11-10T04:41:15.734133+00:00"}
+{"epoch":8,"event":"leader_adopted","leader":2,"node":3,"previous":3,"role":"follower","time":"2026-11-10T04:45:49.058487+00:00"}
+{"conflict":{"id":"35dbbaf49bbbccf53e88ade2ec7f581db4ba1cb4001e3f948ad2bbc90ee3d6e4","operations":["0c8f4647-b364-4f02-a448-e4e0ba5e58c3","9fb86ad1-1161-490b-9c50-5d9d143bcf14"],"resolved":true,"resource":"node1","rule":"max_lamport_then_min_node_id","winner":"9fb86ad1-1161-490b-9c50-5d9d143bcf14"},"event":"conflict_resolved","node":3,"time":"2026-11-10T04:45:49.937360+00:00"}
+{"event":"write_rejected","leader":2,"node":3,"role":"follower","time":"2026-11-10T04:49:15.731145+00:00"}
