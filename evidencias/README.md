@@ -1,44 +1,44 @@
 # CONEXIÓN EXITOSA ENTRE NODOS Y CONFIGURACIÓN SSH
 
-A continuación se evidencia el cumplimiento del Entregable E3 (Registro de la verificación de conectividad inicial). Se demuestra el acceso SSH por clave pública entre todos los nodos del grupo a través de las IP de Tailscale y la desactivación de la autenticación por contraseña.
+A continuación se evidencia el cumplimiento del Entregable E3 (Registro de la verificación de conectividad inicial). Se demuestra la conectividad básica, el acceso SSH por clave pública entre los nodos a través de las IP de Tailscale y la desactivación de la autenticación por contraseña.
 
-## 1. Verificación de conectividad general
+## 1. Verificación de conectividad (Ping)
 
-Aquí se evidencia la conexión del Nodo 2 con el Nodo 1 y con el Nodo 3:
-![Conexión general Nodo 2](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen1.jpeg)
+- **Ping de nodo 2 a nodo 1 y nodo 3:**
+  ![Ping de nodo2 a nodo1 y nodo3](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen1.png)
 
-Aquí se evidencia la conexión del Nodo 3 con el Nodo 2 y con el Nodo 1:
-![Conexión general Nodo 3](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen2.jpeg)
+- **Ping de nodo 3 a nodo 1:**
+  ![Ping de nodo 3 a nodo1](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen2.png)
 
-## 2. Verificación de conectividad bidireccional
+## 2. Verificación de conectividad mediante SSH
 
-**Conexiones desde el Nodo 2:**
-- Hacia el Nodo 1:
-  ![Conexión de Nodo 2 a Nodo 1](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen3.jpeg)
-- Hacia el Nodo 3:
-  ![Conexión de Nodo 2 a Nodo 3](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen4.jpeg)
+- **Conexión de nodo 2 a nodo 1:**
+  ![ssh_nodo2_a_nodo1](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen3.png)
 
-**Conexiones desde el Nodo 3:**
-- Hacia el Nodo 1:
-  ![Conexión de Nodo 3 a Nodo 1](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen5.jpeg)
-- Hacia el Nodo 2:
-  ![Conexión de Nodo 3 a Nodo 2](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen6.jpeg)
+- **Conexión de nodo 2 a nodo 3:**
+  ![ssh_nodo2_a_nodo3](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen4.png)
 
-**Conexiones desde el Nodo 1:**
-- Hacia el Nodo 3:
-  ![Conexión de Nodo 1 a Nodo 3](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen7.jpeg)
-- Hacia el Nodo 2:
-  ![Conexión de Nodo 1 a Nodo 2](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen8.jpeg)
+- **Conexión de nodo 3 a nodo 1:**
+  ![ssh_nodo3_a_nodo1](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen5.png)
 
-## 3. Desactivación de contraseñas SSH
+- **Conexión de nodo 3 a nodo 2:**
+  ![ssh nodo 3 a nodo 2](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen6.png)
 
-Para cumplir con los requisitos del entorno, se deshabilitó el acceso por contraseña editando el archivo `/etc/ssh/sshd_config` y configurando `PasswordAuthentication no`.
+- **Conexión de nodo 1 a nodo 3:**
+  ![ssh nodo 1 a nodo 3](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen7.png)
 
-- **Desactivación en Nodo 2:**
-  ![Desactivación contraseña Nodo 2](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen9.jpeg)
+- **Conexión de nodo 2 a nodo 3:** *(Nota: si esta era la de nodo 1 a nodo 2, ajusta el texto)*
+  ![ssh nodo 2 a nodo 3](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen8.png)
 
-- **Desactivación en Nodo 3:**
-  ![Desactivación contraseña Nodo 3](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen10.jpeg)
+## 3. Configuración y desactivación de contraseñas SSH
 
-- **Desactivación en Nodo 1:**
-  ![Desactivación contraseña Nodo 1](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen11.jpeg)
+Para cumplir con los requisitos del entorno, se deshabilitó el acceso por contraseña editando la configuración de SSH (`PasswordAuthentication no`).
+
+- **Desactivación de contraseña en nodo 2:**
+  ![desactivacion de contraseña nodo 2](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen9.png)
+
+- **Desactivación de contraseña en nodo 3:**
+  ![Desactivacion contraseña nodo 3](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen10.png)
+
+- **Desactivación de contraseña en nodo 1:**
+  ![Desactivacion constraseña nodo 1](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen11.png)
