@@ -1,3 +1,6 @@
 *.pem
 *.key
 .ssh/
+
+.env
+config/redis.local.conf
