@@ -1,0 +1,10 @@
+﻿fase,nodo,rol,lider,epoca,recurso,cpu,memory_mb,bandwidth_mbps,vector,inventory_hash,journal_hash,conflictos_detectados,conflictos_resueltos
+cierre,1,seguidor,2,8,node1,0,960,100,"{""1"": 0, ""2"": 1, ""3"": 3}",ae91918921eb22555418af91bd9bceb8a06aca39bfd6872493ac2d5fb9ca30bc,945a785254103baaf4177aae452949e7ae4ded4649d65bef4e162f1d3bbb9e7f,1,1
+cierre,1,seguidor,2,8,node2,2,1024,100,"{""1"": 0, ""2"": 0, ""3"": 1}",ae91918921eb22555418af91bd9bceb8a06aca39bfd6872493ac2d5fb9ca30bc,945a785254103baaf4177aae452949e7ae4ded4649d65bef4e162f1d3bbb9e7f,1,1
+cierre,1,seguidor,2,8,node3,2,1024,100,"{""1"": 0, ""2"": 0, ""3"": 1}",ae91918921eb22555418af91bd9bceb8a06aca39bfd6872493ac2d5fb9ca30bc,945a785254103baaf4177aae452949e7ae4ded4649d65bef4e162f1d3bbb9e7f,1,1
+cierre,2,líder,2,8,node1,0,960,100,"{""1"": 0, ""2"": 1, ""3"": 3}",ae91918921eb22555418af91bd9bceb8a06aca39bfd6872493ac2d5fb9ca30bc,945a785254103baaf4177aae452949e7ae4ded4649d65bef4e162f1d3bbb9e7f,1,1
+cierre,2,líder,2,8,node2,2,1024,100,"{""1"": 0, ""2"": 0, ""3"": 1}",ae91918921eb22555418af91bd9bceb8a06aca39bfd6872493ac2d5fb9ca30bc,945a785254103baaf4177aae452949e7ae4ded4649d65bef4e162f1d3bbb9e7f,1,1
+cierre,2,líder,2,8,node3,2,1024,100,"{""1"": 0, ""2"": 0, ""3"": 1}",ae91918921eb22555418af91bd9bceb8a06aca39bfd6872493ac2d5fb9ca30bc,945a785254103baaf4177aae452949e7ae4ded4649d65bef4e162f1d3bbb9e7f,1,1
+cierre,3,seguidor,2,8,node1,0,960,100,"{""1"": 0, ""2"": 1, ""3"": 3}",ae91918921eb22555418af91bd9bceb8a06aca39bfd6872493ac2d5fb9ca30bc,945a785254103baaf4177aae452949e7ae4ded4649d65bef4e162f1d3bbb9e7f,1,1
+cierre,3,seguidor,2,8,node2,2,1024,100,"{""1"": 0, ""2"": 0, ""3"": 1}",ae91918921eb22555418af91bd9bceb8a06aca39bfd6872493ac2d5fb9ca30bc,945a785254103baaf4177aae452949e7ae4ded4649d65bef4e162f1d3bbb9e7f,1,1
+cierre,3,seguidor,2,8,node3,2,1024,100,"{""1"": 0, ""2"": 0, ""3"": 1}",ae91918921eb22555418af91bd9bceb8a06aca39bfd6872493ac2d5fb9ca30bc,945a785254103baaf4177aae452949e7ae4ded4649d65bef4e162f1d3bbb9e7f,1,1

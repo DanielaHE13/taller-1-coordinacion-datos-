@@ -1,0 +1,8 @@
+﻿fase,nodo,rol,lider,epoca,recurso,cpu,memory_mb,bandwidth_mbps,vector,inventory_hash,journal_hash,conflictos_detectados,conflictos_resueltos
+E5_durante_grupo,1,seguidor,2,8,node1,0,960,100,"{""1"": 0, ""2"": 1, ""3"": 2}",ae0ee7dfa075fff06d3bbd2de96c6c18444aba6c820e8223e844580c3362ca8a,f6b0311ecb03a0be49d0e8d286ef2a48dfd404cef4c7d033b0d829e059f97d16,0,0
+E5_durante_grupo,1,seguidor,2,8,node2,2,1024,100,"{""1"": 0, ""2"": 0, ""3"": 1}",ae0ee7dfa075fff06d3bbd2de96c6c18444aba6c820e8223e844580c3362ca8a,f6b0311ecb03a0be49d0e8d286ef2a48dfd404cef4c7d033b0d829e059f97d16,0,0
+E5_durante_grupo,1,seguidor,2,8,node3,2,1024,100,"{""1"": 0, ""2"": 0, ""3"": 1}",ae0ee7dfa075fff06d3bbd2de96c6c18444aba6c820e8223e844580c3362ca8a,f6b0311ecb03a0be49d0e8d286ef2a48dfd404cef4c7d033b0d829e059f97d16,0,0
+E5_durante_grupo,2,líder,2,8,node1,0,960,100,"{""1"": 0, ""2"": 1, ""3"": 2}",ae0ee7dfa075fff06d3bbd2de96c6c18444aba6c820e8223e844580c3362ca8a,f6b0311ecb03a0be49d0e8d286ef2a48dfd404cef4c7d033b0d829e059f97d16,0,0
+E5_durante_grupo,2,líder,2,8,node2,2,1024,100,"{""1"": 0, ""2"": 0, ""3"": 1}",ae0ee7dfa075fff06d3bbd2de96c6c18444aba6c820e8223e844580c3362ca8a,f6b0311ecb03a0be49d0e8d286ef2a48dfd404cef4c7d033b0d829e059f97d16,0,0
+E5_durante_grupo,2,líder,2,8,node3,2,1024,100,"{""1"": 0, ""2"": 0, ""3"": 1}",ae0ee7dfa075fff06d3bbd2de96c6c18444aba6c820e8223e844580c3362ca8a,f6b0311ecb03a0be49d0e8d286ef2a48dfd404cef4c7d033b0d829e059f97d16,0,0
+E5_durante_grupo,3,sin respuesta,,,inaccesible,,,,{},,,,

@@ -1,0 +1,10 @@
+﻿fase,nodo,rol,lider,epoca,recurso,cpu,memory_mb,bandwidth_mbps,vector,inventory_hash,journal_hash,conflictos_detectados,conflictos_resueltos
+inventario_inicial,1,seguidor,3,6,node1,2,1024,100,"{""1"": 0, ""2"": 0, ""3"": 1}",d19a790aba51c64e8e24a5881ae9cbce4d99bdc4a3f1b88670c40aa4a1c2e63f,fe0912aa05614282e05d8ffa734df38250e8cbe4912c4d7bb658b3b4c16bf2ef,0,0
+inventario_inicial,1,seguidor,3,6,node2,2,1024,100,"{""1"": 0, ""2"": 0, ""3"": 1}",d19a790aba51c64e8e24a5881ae9cbce4d99bdc4a3f1b88670c40aa4a1c2e63f,fe0912aa05614282e05d8ffa734df38250e8cbe4912c4d7bb658b3b4c16bf2ef,0,0
+inventario_inicial,1,seguidor,3,6,node3,2,1024,100,"{""1"": 0, ""2"": 0, ""3"": 1}",d19a790aba51c64e8e24a5881ae9cbce4d99bdc4a3f1b88670c40aa4a1c2e63f,fe0912aa05614282e05d8ffa734df38250e8cbe4912c4d7bb658b3b4c16bf2ef,0,0
+inventario_inicial,2,seguidor,3,6,node1,2,1024,100,"{""1"": 0, ""2"": 0, ""3"": 1}",d19a790aba51c64e8e24a5881ae9cbce4d99bdc4a3f1b88670c40aa4a1c2e63f,fe0912aa05614282e05d8ffa734df38250e8cbe4912c4d7bb658b3b4c16bf2ef,0,0
+inventario_inicial,2,seguidor,3,6,node2,2,1024,100,"{""1"": 0, ""2"": 0, ""3"": 1}",d19a790aba51c64e8e24a5881ae9cbce4d99bdc4a3f1b88670c40aa4a1c2e63f,fe0912aa05614282e05d8ffa734df38250e8cbe4912c4d7bb658b3b4c16bf2ef,0,0
+inventario_inicial,2,seguidor,3,6,node3,2,1024,100,"{""1"": 0, ""2"": 0, ""3"": 1}",d19a790aba51c64e8e24a5881ae9cbce4d99bdc4a3f1b88670c40aa4a1c2e63f,fe0912aa05614282e05d8ffa734df38250e8cbe4912c4d7bb658b3b4c16bf2ef,0,0
+inventario_inicial,3,líder,3,6,node1,2,1024,100,"{""1"": 0, ""2"": 0, ""3"": 1}",d19a790aba51c64e8e24a5881ae9cbce4d99bdc4a3f1b88670c40aa4a1c2e63f,fe0912aa05614282e05d8ffa734df38250e8cbe4912c4d7bb658b3b4c16bf2ef,0,0
+inventario_inicial,3,líder,3,6,node2,2,1024,100,"{""1"": 0, ""2"": 0, ""3"": 1}",d19a790aba51c64e8e24a5881ae9cbce4d99bdc4a3f1b88670c40aa4a1c2e63f,fe0912aa05614282e05d8ffa734df38250e8cbe4912c4d7bb658b3b4c16bf2ef,0,0
+inventario_inicial,3,líder,3,6,node3,2,1024,100,"{""1"": 0, ""2"": 0, ""3"": 1}",d19a790aba51c64e8e24a5881ae9cbce4d99bdc4a3f1b88670c40aa4a1c2e63f,fe0912aa05614282e05d8ffa734df38250e8cbe4912c4d7bb658b3b4c16bf2ef,0,0

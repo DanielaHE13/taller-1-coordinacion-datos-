@@ -36,10 +36,8 @@ El proyecto se ejecutará en máquinas virtuales del grupo. Documentaremos las d
 - **Lecturas:** cada nodo consulta la vista del inventario guardada en su Redis local. Durante una partición, la vista puede estar desactualizada hasta que se reconcilien las operaciones.
 - **Escrituras:** solo el líder acepta asignaciones. Cada asignación descuenta recursos disponibles y se rechaza si supera la capacidad.
 - **Confirmación de escrituras:** la API confirma la escritura en el Redis maestro; no espera confirmación de las réplicas. Las asignaciones realizadas durante una partición son provisionales y se reconcilian al reconectar.
-- **Confirmación:** la API confirma la escritura en el maestro Redis; no espera confirmaciones de las réplicas. Durante una partición, las asignaciones se consideran provisionales y se reconcilian al reconectar.
 
- ## Nodos
-
+## Nodos
 | Nodo | ID | Sistema | Dirección Tailscale |
 |---|---:|---|---|
 | nodo1 | 1 | Debian 13 | `100.101.47.119` |

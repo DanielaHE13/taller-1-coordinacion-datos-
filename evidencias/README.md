@@ -1,44 +1,23 @@
-# CONEXIÓN EXITOSA ENTRE NODOS Y CONFIGURACIÓN SSH
+# Evidencias del taller
 
-A continuación se evidencia el cumplimiento del Entregable E3 (Registro de la verificación de conectividad inicial). Se demuestra la conectividad básica, el acceso SSH por clave pública entre los nodos a través de las IP de Tailscale y la desactivación de la autenticación por contraseña.
+Esta carpeta reúne las evidencias de los entregables E3, E4 y E5. Cada subcarpeta contiene un README con la descripción de sus archivos y resultados.
 
-## 1. Verificación de conectividad (Ping)
+## Estructura
 
-- **Ping de nodo 2 a nodo 1 y nodo 3:**
-  ![Ping de nodo2 a nodo1 y nodo3](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/blob/main/evidencias/Imagen1.jpeg)
+- `E3/`: verificación inicial de conectividad entre los nodos mediante ping y SSH, y configuración de autenticación SSH.
+- `E4/`: registros de la elección del líder y su recuperación tras la caída o desconexión de un nodo.
+- `E5/`: archivos de inventario y registros de eventos de la prueba de partición de red, resolución de conflictos y convergencia.
 
-- **Ping de nodo 3 a nodo 1:**
-  ![Ping de nodo 3 a nodo1](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/blob/main/evidencias/Imagen2.jpeg)
+## Organización de E5
 
-## 2. Verificación de conectividad mediante SSH
+La evidencia de E5 está separada por nodo:
 
-- **Conexión de nodo 2 a nodo 1:**
-  ![ssh_nodo2_a_nodo1](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/blob/main/evidencias/Imagen3.jpeg)
+- `E5/nodo1/`
+- `E5/nodo2/`
+- `E5/nodo3/`
 
-- **Conexión de nodo 2 a nodo 3:**
-  ![ssh_nodo2_a_nodo3](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/blob/main/evidencias/Imagen4.jpeg)
+Los archivos CSV y JSON guardan estados del inventario en diferentes fases. Los archivos `.jsonl` y los logs registran eventos de ejecución. La comparación final de convergencia está documentada en `E5/README.md`.
 
-- **Conexión de nodo 3 a nodo 1:**
-  ![ssh_nodo3_a_nodo1](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/blob/main/evidencias/Imagen5.jpeg)
+## Revisión
 
-- **Conexión de nodo 3 a nodo 2:**
-  ![ssh nodo 3 a nodo 2](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/blob/main/evidencias/Imagen6.jpeg)
-
-- **Conexión de nodo 1 a nodo 3:**
-  ![ssh nodo 1 a nodo 3](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/blob/main/evidencias/Imagen7.jpeg)
-
-- **Conexión de nodo 2 a nodo 3:**
-  ![ssh nodo 2 a nodo 3](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/blob/main/evidencias/Imagen8.jpeg)
-
-## 3. Configuración y desactivación de contraseñas SSH
-
-Para cumplir con los requisitos del entorno, se deshabilitó el acceso por contraseña editando la configuración de SSH (`PasswordAuthentication no`).
-
-- **Desactivación de contraseña en nodo 2:**
-  ![desactivacion de contraseña nodo 2](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/blob/main/evidencias/Imagen9.jpeg)
-
-- **Desactivación de contraseña en nodo 3:**
-  ![Desactivacion contraseña nodo 3](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/blob/main/evidencias/Imagen10.jpeg)
-
-- **Desactivación de contraseña en nodo 1:**
-  ![Desactivacion constraseña nodo 1](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/blob/main/evidencias/Imagen11.jpeg)
+Consulta el README dentro de cada entregable para conocer el escenario probado, los archivos incluidos y los resultados observados.

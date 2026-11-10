@@ -1,4 +1,0 @@
-﻿fase,nodo,rol,lider,epoca,recurso,cpu,memory_mb,bandwidth_mbps,vector,inventory_hash,journal_hash,conflictos_detectados,conflictos_resueltos
-E5_durante_aislado,3,líder,3,6,node1,1,960,100,"{""1"": 0, ""2"": 0, ""3"": 3}",10548c61d8832465dacbd66e3433e75a5222c0941fab8efbe350ceb2f5770db3,0a7f74b73a315c23652281559ecfcb83ad2eeffe915870d17febcfa21fe6da51,0,0
-E5_durante_aislado,3,líder,3,6,node2,2,1024,100,"{""1"": 0, ""2"": 0, ""3"": 1}",10548c61d8832465dacbd66e3433e75a5222c0941fab8efbe350ceb2f5770db3,0a7f74b73a315c23652281559ecfcb83ad2eeffe915870d17febcfa21fe6da51,0,0
-E5_durante_aislado,3,líder,3,6,node3,2,1024,100,"{""1"": 0, ""2"": 0, ""3"": 1}",10548c61d8832465dacbd66e3433e75a5222c0941fab8efbe350ceb2f5770db3,0a7f74b73a315c23652281559ecfcb83ad2eeffe915870d17febcfa21fe6da51,0,0
