@@ -1,5 +1,3 @@
-# taller-1-coordinacion-datos-
-Taller 1 de Sistemas Distribuidos: coordinador, inventario y partición.
 # Taller 1: Coordinación y datos del sistema
 
 Proyecto de la asignatura **Sistemas Distribuidos Modernos**.
@@ -30,33 +28,45 @@ El proyecto se ejecutará en máquinas virtuales del grupo. Documentaremos las d
 
 ## Decisiones técnicas
 
-Completar esta sección cuando el grupo tome las decisiones:
+- **Algoritmo de elección:** Matón. Gana el nodo con el ID más alto entre los nodos que participan en esa elección.
+- **Base de datos:** Redis con topología maestro-réplica. El líder coordina las escrituras y la topología de Redis se ajusta al líder actual.
+- **Bitácora de operaciones:** cada nodo conserva localmente un diario SQLite para recuperar y sincronizar operaciones.
+- **Mecanismo de versión:** vector de versión por recurso y reloj de Lamport por operación.
+- **Regla de resolución de conflictos:** entre operaciones concurrentes gana el Lamport mayor; si empatan, gana el ID de nodo menor.
+- **Lecturas:** cada nodo consulta la vista del inventario guardada en su Redis local. Durante una partición, la vista puede estar desactualizada hasta que se reconcilien las operaciones.
+- **Escrituras:** solo el líder acepta asignaciones. Cada asignación descuenta recursos disponibles y se rechaza si supera la capacidad.
+- **Confirmación de escrituras:** la API confirma la escritura en el Redis maestro; no espera confirmación de las réplicas. Las asignaciones realizadas durante una partición son provisionales y se reconcilian al reconectar.
+- **Confirmación:** la API confirma la escritura en el maestro Redis; no espera confirmaciones de las réplicas. Durante una partición, las asignaciones se consideran provisionales y se reconcilian al reconectar.
 
-- **Algoritmo de elección:** Matón.
-- **Base de datos:** pendiente de elegir entre MongoDB con replica set o Redis con replicación.
-- **Mecanismo de versión:** pendiente de definir.
-- **Regla de resolución de conflictos:** gana el nodo activo con el ID más alto.
-- **Lecturas y confirmación de escrituras:** pendiente de documentar.
-- **Identificadores:** nodo1=1, nodo2=2, nodo3=3.
+ ## Nodos
+
+| Nodo | ID | Sistema | Dirección Tailscale |
+|---|---:|---|---|
+| nodo1 | 1 | Debian 13 | `100.101.47.119` |
+| nodo2 | 2 | Ubuntu Server 26.04.1 | `100.92.63.103` |
+| nodo3 | 3 | Debian 13 | `100.98.74.61` |
 
 ## Estructura del repositorio
 
-- `coordinador/`: código para elegir y mantener el coordinador.
-- `agentes/`: código de los procesos que ejecuta cada nodo.
-- `scripts/`: scripts de ejecución y pruebas, incluida la partición de red.
+- `agentes/`: cliente de línea de comandos para consultar y modificar el inventario.
+- `coordinador/`: elección, bitácora, versionado y conexión con Redis.
+- `config/`: configuración de ejemplo. 
+- `scripts/`: preparación e inicio de los nodos.
+- `pruebas/`: pruebas automatizadas o auxiliares.
+- `Validacion/`: material de validación del proyecto.
 - `logs/`: registros de las ejecuciones.
-- `evidencias/`: pruebas iniciales de conectividad y resultados.
-- `informe/`: informe técnico y material de apoyo.
+- `evidencias/`: capturas, salidas y archivos seleccionados para los entregables.
+- `informe/`: informe técnico.
+- `datos/`: datos locales de ejecución; no deben confundirse con la evidencia seleccionada para entregar.
+
 
 ## Requisitos del entorno
 
-El taller requiere al menos tres máquinas virtuales Debian 13 o Ubuntu Server 26.04.1, acceso SSH por clave pública y conectividad entre los nodos mediante Tailscale.
-
-Antes de iniciar el desarrollo, se debe comprobar y guardar evidencia de que los nodos pueden comunicarse por ping y SSH.
-
-## Ejecución
-
-Instrucciones pendientes. Se completarán cuando el grupo haya implementado y probado el sistema.
+- Tres máquinas virtuales Debian 13 o Ubuntu Server 26.04.1.
+- Conectividad entre nodos mediante Tailscale.
+- Acceso SSH mediante clave pública.
+- Python 3 y Redis Server instalados en cada nodo.
+- El mismo token de API y la misma clave de Redis configurados localmente en los tres nodos
 
 ## Entregables
 
@@ -66,6 +76,4 @@ Instrucciones pendientes. Se completarán cuando el grupo haya implementado y pr
 - **E4:** logs de elección del líder y recuperación tras su caída.
 - **E5:** logs y resultados del experimento de partición de red.
 
-## Seguridad
 
-No subir claves privadas, contraseñas ni credenciales al repositorio. El archivo `.gitignore` excluye archivos `.pem`, `.key` y la carpeta `.ssh/`.
