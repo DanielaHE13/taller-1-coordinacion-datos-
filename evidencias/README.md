@@ -5,32 +5,32 @@ A continuación se evidencia el cumplimiento del Entregable E3 (Registro de la v
 ## 1. Verificación de conectividad bidireccional
 
 **Conexiones desde el Nodo 2:**
-* Hacia el Nodo 1:
-  ![Conexión de Nodo 2 a Nodo 1](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/blob/main/evidencias/Imagen%203.jpeg)
-* Hacia el Nodo 3:
-  ![Conexión de Nodo 2 a Nodo 3](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/blob/main/evidencias/Imagen4.jpeg)
+- Hacia el Nodo 1:
+  ![Conexión de Nodo 2 a Nodo 1](evidencias/Imagen%203.jpeg)
+- Hacia el Nodo 3:
+  ![Conexión de Nodo 2 a Nodo 3](evidencias/Imagen4.jpeg)
 
 **Conexiones desde el Nodo 3:**
-* Hacia el Nodo 1:
-  ![Conexión de Nodo 3 a Nodo 1](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/blob/main/evidencias/Imagen5.jpeg)
-* Hacia el Nodo 2:
-  ![Conexión de Nodo 3 a Nodo 2](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/blob/main/evidencias/Imagen6.jpeg)
+- Hacia el Nodo 1:
+  ![Conexión de Nodo 3 a Nodo 1](evidencias/Imagen5.jpeg)
+- Hacia el Nodo 2:
+  ![Conexión de Nodo 3 a Nodo 2](evidencias/Imagen6.jpeg)
 
 **Conexiones desde el Nodo 1:**
-* Hacia el Nodo 3:
-  ![Conexión de Nodo 1 a Nodo 3](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/blob/main/evidencias/Imagen7.jpeg)
-* Hacia el Nodo 2:
-  ![Conexión de Nodo 1 a Nodo 2](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/blob/main/evidencias/Imagen8.jpeg)
+- Hacia el Nodo 3:
+  ![Conexión de Nodo 1 a Nodo 3](evidencias/Imagen7.jpeg)
+- Hacia el Nodo 2:
+  ![Conexión de Nodo 1 a Nodo 2](evidencias/Imagen8.jpeg)
 
 ## 2. Desactivación de contraseñas SSH
 
 Para cumplir con los requisitos del entorno, se deshabilitó el acceso por contraseña editando el archivo `/etc/ssh/sshd_config` y configurando `PasswordAuthentication no`.
 
-* **Desactivación en Nodo 2:**
-  ![Desactivación contraseña Nodo 2](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/blob/main/evidencias/Imagen9.jpeg)
+- **Desactivación en Nodo 2:**
+  ![Desactivación contraseña Nodo 2](evidencias/Imagen9.jpeg)
 
-* **Desactivación en Nodo 3:**
-  ![Desactivación contraseña Nodo 3](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/blob/main/evidencias/Imagen10.jpeg)
+- **Desactivación en Nodo 3:**
+  ![Desactivación contraseña Nodo 3](evidencias/Imagen10.jpeg)
 
-* **Desactivación en Nodo 1:**
-  ![Desactivación contraseña Nodo 1](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/blob/main/evidencias/Imagen11.jpeg)
+- **Desactivación en Nodo 1:**
+  ![Desactivación contraseña Nodo 1](evidencias/Imagen11.jpeg)
