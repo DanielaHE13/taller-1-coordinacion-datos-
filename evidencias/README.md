@@ -5,40 +5,40 @@ A continuación se evidencia el cumplimiento del Entregable E3 (Registro de la v
 ## 1. Verificación de conectividad (Ping)
 
 - **Ping de nodo 2 a nodo 1 y nodo 3:**
-  ![Ping de nodo2 a nodo1 y nodo3](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen1.png)
+  ![Ping de nodo2 a nodo1 y nodo3](evidencias/Imagen1.png)
 
 - **Ping de nodo 3 a nodo 1:**
-  ![Ping de nodo 3 a nodo1](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen2.png)
+  ![Ping de nodo 3 a nodo1](evidencias/Imagen2.png)
 
 ## 2. Verificación de conectividad mediante SSH
 
 - **Conexión de nodo 2 a nodo 1:**
-  ![ssh_nodo2_a_nodo1](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen3.png)
+  ![ssh_nodo2_a_nodo1](evidencias/Imagen3.png)
 
 - **Conexión de nodo 2 a nodo 3:**
-  ![ssh_nodo2_a_nodo3](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen4.png)
+  ![ssh_nodo2_a_nodo3](evidencias/Imagen4.png)
 
 - **Conexión de nodo 3 a nodo 1:**
-  ![ssh_nodo3_a_nodo1](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen5.png)
+  ![ssh_nodo3_a_nodo1](evidencias/Imagen5.png)
 
 - **Conexión de nodo 3 a nodo 2:**
-  ![ssh nodo 3 a nodo 2](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen6.png)
+  ![ssh nodo 3 a nodo 2](evidencias/Imagen6.png)
 
 - **Conexión de nodo 1 a nodo 3:**
-  ![ssh nodo 1 a nodo 3](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen7.png)
+  ![ssh nodo 1 a nodo 3](evidencias/Imagen7.png)
 
-- **Conexión de nodo 2 a nodo 3:** *(Nota: si esta era la de nodo 1 a nodo 2, ajusta el texto)*
-  ![ssh nodo 2 a nodo 3](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen8.png)
+- **Conexión de nodo 2 a nodo 3:**
+  ![ssh nodo 2 a nodo 3](evidencias/Imagen8.png)
 
 ## 3. Configuración y desactivación de contraseñas SSH
 
 Para cumplir con los requisitos del entorno, se deshabilitó el acceso por contraseña editando la configuración de SSH (`PasswordAuthentication no`).
 
 - **Desactivación de contraseña en nodo 2:**
-  ![desactivacion de contraseña nodo 2](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen9.png)
+  ![desactivacion de contraseña nodo 2](evidencias/Imagen9.png)
 
 - **Desactivación de contraseña en nodo 3:**
-  ![Desactivacion contraseña nodo 3](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen10.png)
+  ![Desactivacion contraseña nodo 3](evidencias/Imagen10.png)
 
 - **Desactivación de contraseña en nodo 1:**
-  ![Desactivacion constraseña nodo 1](https://github.com/DanielaHE13/taller-1-coordinacion-datos-/raw/main/evidencias/Imagen11.png)
+  ![Desactivacion constraseña nodo 1](evidencias/Imagen11.png)
