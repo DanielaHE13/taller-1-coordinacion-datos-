@@ -1,8 +1,0 @@
-VALIDACION LOCAL DE LA ADAPTACION
-14 pruebas Python satisfactorias.
-Compatibilidad, eleccion original, HTTP en localhost, concurrencia y convergencia simulada.
-Backend de inventario en memoria. No se ejecutaron Redis real ni las VM.
-Cuatro scripts Bash comprobados con bash -n. No se ejecutaron iptables ni SSH contra sus nodos.
-La logica original de Nodo, crear_servidor y main se comparo mediante AST con el ZIP suministrado.
-coordinador/nodos.json y las evidencias originales se conservaron byte por byte.
-Pendiente: Redis, E4 y E5 del modo ampliado en las tres VM y completar informe.

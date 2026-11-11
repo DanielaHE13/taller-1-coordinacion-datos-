@@ -8,3 +8,5 @@ config/redis.local.conf
 __pycache__/
 *.py[cod]
 datos/
+
+config/*.local.json

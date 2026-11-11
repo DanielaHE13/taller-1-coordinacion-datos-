@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-# Solo en la CONSOLA de la VM que se aislará. Bloquea tráfico entre pares
-# por tailscale0, incluyendo SSH, ping, HTTP y Redis, en ambos sentidos.
-# No vacía reglas existentes. Tailscale FORWARD no se modifica.
 set -euo pipefail
 action="${1:-}"
 shift || true
