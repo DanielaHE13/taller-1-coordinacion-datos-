@@ -1,40 +1,46 @@
-# E5: Partición de red y resolución de conflictos
+# E5 · Partición de red, conflicto y convergencia
 
-Esta carpeta reúne los registros del experimento de partición de red. La evidencia está organizada por nodo y contiene capturas del inventario antes, durante y después del aislamiento, además de los eventos de ejecución.
+Este entregable documenta el comportamiento del inventario antes, durante y después de aislar nodo3 del grupo formado por nodo1 y nodo2. Las capturas muestran estados locales distintos durante la partición y la convergencia del inventario después de restablecer la comunicación.
 
-## Estructura de la evidencia
+## Evidencia por nodo
 
-- `nodo1/`: estados del inventario y registro `nodo1_inventario.log`.
-- `nodo2/`: inventario inicial y eventos registrados por nodo2.
-- `nodo3/`: inventario inicial, estado durante el aislamiento, cierre y eventos registrados por nodo3.
+| Directorio | Archivos destacados |
+|---|---|
+| [`nodo1/`](./nodo1/) | Capturas `E5_antes`, `E5_durante_grupo` y `E5_despues` en JSON/CSV; `inventario_inicial`; `eventos_inventario.jsonl` y `nodo1_inventario.log`. |
+| [`nodo2/`](./nodo2/) | Captura `inventario_inicial` en JSON/CSV y `eventos_inventario.jsonl`. |
+| [`nodo3/`](./nodo3/) | Capturas `inventario_inicial`, `E5_durante_aislado` y `cierre` en JSON/CSV; `eventos_inventario.jsonl`. |
 
-Los archivos CSV facilitan la lectura tabular de cada captura. Los JSON conservan el estado detallado de los nodos y los hashes. Los archivos `eventos_inventario.jsonl` registran eventos locales.
+Cada captura JSON incluye la hora UTC, los estados que respondieron, el líder observado, la vista de inventario y sus hashes. El CSV resume los datos por nodo y recurso; los archivos `.jsonl` y `.log` conservan eventos del proceso.
 
-## Resultados antes, durante y después
+## Comparación de las capturas
 
-| Fase | Nodos que responden / líder observado | Operaciones y conflicto | CPU disponible en `node1` | Hash del inventario |
-|---|---|---|---:|---|
-| Antes de la partición (`E5_antes`, 04:32:56 UTC) | Nodos 1, 2 y 3; líder 3 | 4 operaciones; 0 conflictos | 2 | `e5ecd6ec…` |
-| Durante: grupo conectado (`E5_durante_grupo`, 04:43:00 UTC) | Nodos 1 y 2 responden; nodo 3 no es alcanzable; líder 2 | 5 operaciones; 0 conflictos en esta captura. El log de nodo2 contiene `write_accepted` | 0 | `ae0ee7df…` |
-| Durante: nodo aislado (`E5_durante_aislado`, 04:41:37 UTC) | Nodo 3 consulta su estado local y todavía se considera líder | 5 operaciones; 0 conflictos en esta captura; nodo3 registra `write_accepted` a las 04:41:15 UTC | 1 | `10548c61…` |
-| Después de reconectar (`E5_despues`, 04:46:49 UTC) | Nodos 1, 2 y 3 responden; líder 2 | 6 operaciones; 1 conflicto detectado y resuelto | 0 | `ae919189…` |
+| Fase | Captura UTC | Nodos observados y líder | Operaciones | Conflictos detectados/resueltos | CPU disponible en `node1` | Hash de inventario |
+|---|---|---|---:|---:|---:|---|
+| Antes de la partición | 04:32:56 | Nodos 1, 2 y 3; líder 3 | 4 | 0 / 0 | 2 | `e5ecd6ec…` |
+| Grupo conectado | 04:43:00 | Nodos 1 y 2; líder 2 | 5 | 0 / 0 | 0 | `ae0ee7df…` |
+| Nodo aislado | 04:41:37 | Nodo 3; aún se considera líder | 5 | 0 / 0 | 1 | `10548c61…` |
+| Después de reconectar | 04:46:49 | Nodos 1, 2 y 3; líder 2 | 6 | 1 / 1 | 0 | `ae919189…` |
 
-Durante el aislamiento, las capturas muestran estados diferentes en los dos lados: el grupo conectado registra el inventario de nodo1 con 0 CPU disponible, mientras nodo3, aislado, registra 1 CPU disponible y continúa considerándose líder. Cada lado registra 5 operaciones, frente a 4 en la captura previa. El evento `write_accepted` de nodo3 coincide con la captura aislada; el registro de nodo2 también contiene `write_accepted`, pero su hora (02:24 UTC) no coincide con la serie de capturas (aproximadamente 04:32–04:56 UTC), así que no se le asigna aquí un instante preciso dentro de la partición. Después de reconectar, los tres nodos vuelven a compartir el mismo estado.
+Los hashes se muestran abreviados para facilitar la lectura; los valores completos están en los JSON. Las horas corresponden a las capturas y no implican un orden absoluto entre los eventos locales.
 
-## Resolución del conflicto y convergencia
+## Comportamiento durante la partición
 
-El log de nodo1 registra un conflicto resuelto para el recurso `node1`. Se aplicó la regla `max_lamport_then_min_node_id`: gana la operación con mayor valor de Lamport y, en caso de empate, la del nodo con el ID menor.
+El grupo conectado (nodos 1 y 2) y nodo3 aislado conservaron vistas distintas del recurso `node1`: 0 CPU disponible en la captura del grupo y 1 CPU en la captura local de nodo3. Ambos lados registraban cinco operaciones y todavía no mostraban conflictos detectados en esas capturas. Nodo3 mantenía localmente el rol de líder durante su aislamiento; el grupo conectado registraba a nodo2 como líder.
 
-En `nodo1/E5_despues_20261110T044649_486978.json`, los tres nodos reportan:
+La bitácora de nodo3 contiene un evento `write_accepted` a las 04:41:15 UTC, consistente con la captura del lado aislado. La bitácora de nodo2 también contiene un `write_accepted`, pero está fechado a las 02:24:20 UTC, fuera del intervalo de las capturas de estado de esta secuencia. Por ese desfase, no se presenta como una operación ocurrida en un instante determinado de la partición.
 
-- **Hash del inventario:** `ae91918921eb22555418af91bd9bceb8a06aca39bfd6872493ac2d5fb9ca30bc`
-- **Hash del diario:** `945a785254103baaf4177aae452949e7ae4ded4649d65bef4e162f1d3bbb9e7f`
-- **Líder:** nodo 2, época 8.
+## Resolución y convergencia
+
+Tras la reconexión, la captura [`E5_despues_20261110T044649_486978.json`](./nodo1/E5_despues_20261110T044649_486978.json) muestra los mismos resultados en los tres nodos:
+
+- **Líder:** nodo2, época 8.
 - **Operaciones:** 6.
-- **Conflictos detectados y resueltos:** 1 y 1.
+- **Conflictos:** 1 detectado y 1 resuelto.
+- **Hash del inventario:** `ae91918921eb22555418af91bd9bceb8a06aca39bfd6872493ac2d5fb9ca30bc`.
+- **Hash del diario:** `945a785254103baaf4177aae452949e7ae4ded4649d65bef4e162f1d3bbb9e7f`.
 
-Por tanto, la captura posterior a la reconexión confirma que los tres nodos convergieron al mismo inventario y diario.
+El evento de nodo1 identifica un conflicto sobre `node1`. Se aplicó la regla `max_lamport_then_min_node_id`: gana la operación con el Lamport mayor y, en caso de empate, la originada por el nodo con el ID menor. La coincidencia de hashes y contadores de conflicto en la captura final respalda la convergencia del estado documentado.
 
-## Nota sobre los tiempos
+## Interpretación de los tiempos
 
-Las capturas de estado incluyen hora UTC. Los registros locales de los nodos pueden mostrar horas distintas; para reconstruir la prueba se consideran la fase y el contenido de cada archivo junto con sus eventos.
+Las capturas de estado usan marcas UTC. Los eventos se escriben en cada nodo y la hora de un registro aislado puede no coincidir con la secuencia de capturas; se documentan las diferencias conocidas en vez de asumir una cronología global. Para el contexto de los demás entregables, vuelve al [índice de evidencias](../README.md).

@@ -1,55 +1,42 @@
-# Conexión entre nodos y configuración de SSH
+# E3 · Conectividad entre nodos y SSH
 
-Este documento reúne la evidencia del entregable **E3: verificación inicial de conectividad**. Las capturas muestran pruebas de ping entre los nodos, acceso SSH mediante clave pública a través de Tailscale y la configuración de SSH en los tres nodos.
+Esta evidencia documenta la verificación inicial de comunicación entre las máquinas del clúster mediante ping y SSH sobre Tailscale, además de la configuración de autenticación por clave pública.
 
-## 1. Verificación de conectividad mediante ping
+## Pruebas de conectividad
 
-### Ping de nodo 2 a nodo 1 y nodo 3
+### Ping
 
-![Ping de nodo 2 a nodo 1 y nodo 3](Imagen1.jpeg)
+**Nodo 2 hacia los nodos 1 y 3**
 
-### Ping de nodo 3 a nodo 1
+![Pruebas de ping de nodo 2 a nodos 1 y 3](Imagen1.jpeg)
 
-![Ping de nodo 3 a nodo 1](Imagen2.jpeg)
+**Nodo 3 hacia nodo 1**
 
-## 2. Verificación de conectividad mediante SSH
+![Prueba de ping de nodo 3 a nodo 1](Imagen2.jpeg)
 
-### Conexión de nodo 2 a nodo 1
+### Acceso SSH
 
-![Conexión SSH de nodo 2 a nodo 1](Imagen3.jpeg)
+Las capturas muestran sesiones entre los nodos usando las direcciones de la red Tailscale.
 
-### Conexión de nodo 2 a nodo 3
+| Origen | Destino | Evidencia |
+|---|---|---|
+| Nodo 2 | Nodo 1 | ![Conexión SSH de nodo 2 a nodo 1](Imagen3.jpeg) |
+| Nodo 2 | Nodo 3 | ![Conexión SSH de nodo 2 a nodo 3](Imagen4.jpeg) |
+| Nodo 3 | Nodo 1 | ![Conexión SSH de nodo 3 a nodo 1](Imagen5.jpeg) |
+| Nodo 3 | Nodo 2 | ![Conexión SSH de nodo 3 a nodo 2](Imagen6.jpeg) |
+| Nodo 1 | Nodo 3 | ![Conexión SSH de nodo 1 a nodo 3](Imagen7.jpeg) |
+| Nodo 2 | Nodo 3 | ![Conexión SSH de nodo 2 a nodo 3](Imagen8.jpeg) |
 
-![Conexión SSH de nodo 2 a nodo 3](Imagen4.jpeg)
+## Autenticación SSH
 
-### Conexión de nodo 3 a nodo 1
+Las capturas siguientes documentan la configuración de `PasswordAuthentication no`, para deshabilitar el acceso SSH por contraseña.
 
-![Conexión SSH de nodo 3 a nodo 1](Imagen5.jpeg)
+| Nodo | Evidencia |
+|---|---|
+| Nodo 2 | ![Configuración de autenticación SSH en nodo 2](Imagen9.jpeg) |
+| Nodo 3 | ![Configuración de autenticación SSH en nodo 3](Imagen10.jpeg) |
+| Nodo 1 | ![Configuración de autenticación SSH en nodo 1](Imagen11.jpeg) |
 
-### Conexión de nodo 3 a nodo 2
+## Alcance
 
-![Conexión SSH de nodo 3 a nodo 2](Imagen6.jpeg)
-
-### Conexión de nodo 1 a nodo 3
-
-![Conexión SSH de nodo 1 a nodo 3](Imagen7.jpeg)
-
-### Conexión de nodo 2 a nodo 3
-
-![Conexión SSH de nodo 2 a nodo 3](Imagen8.jpeg)
-
-## 3. Configuración de autenticación SSH
-
-Las siguientes capturas documentan la configuración de SSH para deshabilitar la autenticación por contraseña (`PasswordAuthentication no`).
-
-### Nodo 2
-
-![Desactivación de autenticación por contraseña en nodo 2](Imagen9.jpeg)
-
-### Nodo 3
-
-![Desactivación de autenticación por contraseña en nodo 3](Imagen10.jpeg)
-
-### Nodo 1
-
-![Desactivación de autenticación por contraseña en nodo 1](Imagen11.jpeg)
+Estas capturas corresponden a la verificación inicial de conectividad y configuración de SSH; no sustituyen las pruebas de elección de líder ni las de partición de red descritas en [E4](../E4/README.md) y [E5](../E5/README.md).

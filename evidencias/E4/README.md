@@ -1,9 +1,18 @@
-# Registros de pruebas
+# E4 · Elección y recuperación del coordinador
 
-Esta carpeta conserva las salidas de las ejecuciones de los nodos. Los registros permiten revisar las pruebas del taller y respaldan los resultados descritos en el informe.
+Este entregable documenta la elección del líder, su cambio cuando deja de responder y la reincorporación posterior del nodo de mayor ID.
 
-## E4: elección y recuperación del líder
+## Archivos
 
-Los archivos `nodo1_e4_coordinada.log`, `nodo2_e4_coordinada.log` y `nodo3_e4_coordinada.log` corresponden a la repetición coordinada de la prueba. En conjunto registran la elección inicial de nodo3, su detención, la elección de nodo2 y el regreso de nodo3.
+| Archivo | Registro |
+|---|---|
+| [`nodo1_e4_coordinada.log`](./nodo1_e4_coordinada.log) | Cambios de líder observados por nodo1 durante la prueba. |
+| [`nodo2_e4_coordinada.log`](./nodo2_e4_coordinada.log) | Elecciones y cambios de líder observados por nodo2. |
+| [`nodo3_e4_coordinada.log`](./nodo3_e4_coordinada.log) | Elección y anuncios de liderazgo observados por nodo3. |
 
+## Resultado documentado
+
+En la secuencia registrada, nodo3 asume inicialmente el liderazgo. Cuando deja de participar, los registros muestran la elección de nodo2; al reincorporarse nodo3, vuelve a ser reconocido como líder por los nodos que registran ese cambio.
+
+Los logs se generan localmente en cada máquina y sus relojes pueden diferir. Por ello, deben interpretarse como registros por nodo de las transiciones observadas, no como una fuente única de tiempo global. Consulta el [índice de evidencias](../README.md) para el contexto de los demás entregables.
 

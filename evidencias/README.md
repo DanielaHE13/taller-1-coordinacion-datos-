@@ -1,23 +1,28 @@
 # Evidencias del taller
 
-Esta carpeta reúne las evidencias de los entregables E3, E4 y E5. Cada subcarpeta contiene un README con la descripción de sus archivos y resultados.
+Esta carpeta reúne los archivos seleccionados para documentar los entregables E3, E4 y E5. Cada entregable cuenta con una guía que describe el escenario, la organización de los archivos y los resultados observados.
 
-## Estructura
+## Índice
 
-- `E3/`: verificación inicial de conectividad entre los nodos mediante ping y SSH, y configuración de autenticación SSH.
-- `E4/`: registros de la elección del líder y su recuperación tras la caída o desconexión de un nodo.
-- `E5/`: archivos de inventario y registros de eventos de la prueba de partición de red, resolución de conflictos y convergencia.
+| Entregable | Evidencia | Guía |
+|---|---|---|
+| E3 | Capturas de conectividad por ping y SSH, y configuración de autenticación SSH. | [Conectividad y SSH](./E3/README.md) |
+| E4 | Registros de elección del coordinador, cambio de líder y recuperación. | [Elección y recuperación](./E4/README.md) |
+| E5 | Estados JSON/CSV, eventos y registros de la prueba de partición y reconciliación. | [Partición y convergencia](./E5/README.md) |
 
 ## Organización de E5
 
-La evidencia de E5 está separada por nodo:
+Los archivos de la prueba de inventario están separados por nodo:
 
-- `E5/nodo1/`
-- `E5/nodo2/`
-- `E5/nodo3/`
+```text
+E5/
+├── nodo1/
+├── nodo2/
+└── nodo3/
+```
 
-Los archivos CSV y JSON guardan estados del inventario en diferentes fases. Los archivos `.jsonl` y los logs registran eventos de ejecución. La comparación final de convergencia está documentada en `E5/README.md`.
+Los estados de cada fase se conservan en JSON y CSV; los archivos `.jsonl` contienen eventos locales del servicio y puede haber también registros de consola. Los CSV facilitan la comparación tabular; los JSON incluyen los datos completos de cada captura, incluidos roles, operaciones y hashes.
 
-## Revisión
+## Consulta
 
-Consulta el README dentro de cada entregable para conocer el escenario probado, los archivos incluidos y los resultados observados.
+Empieza por la guía de cada entregable para interpretar la evidencia y sus limitaciones. Para conocer las decisiones de diseño y el alcance de las pruebas, consulta también el [README principal](../README.md).
