@@ -17,4 +17,5 @@ COPY coordinador/ coordinador/
 COPY saga/ taller2/saga/
 
 EXPOSE 50051
+STOPSIGNAL SIGINT
 CMD ["python", "-u", "coordinador/coordinador.py"]
