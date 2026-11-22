@@ -1,0 +1,13 @@
+# Taller 2 · E5 · Extracto de la salida del productor en el nodo 2
+# Hora de los registros: UTC. Se omitieron el prompt y el aviso de Pika.
+
+2026-11-22T05:06:24+00:00 | Intento 1 | ID: de5f5d9f-c292-4e60-8f9f-8b48bd2c1a64
+2026-11-22T05:06:24+00:00 | Fallo: AMQPConnectionError | Reintento en 2s
+2026-11-22T05:06:26+00:00 | Intento 2 | ID: de5f5d9f-c292-4e60-8f9f-8b48bd2c1a64
+2026-11-22T05:06:26+00:00 | Fallo: AMQPConnectionError | Reintento en 4s
+2026-11-22T05:06:30+00:00 | Intento 3 | ID: de5f5d9f-c292-4e60-8f9f-8b48bd2c1a64
+2026-11-22T05:06:30+00:00 | Fallo: AMQPConnectionError | Reintento en 8s
+2026-11-22T05:06:38+00:00 | Intento 4 | ID: de5f5d9f-c292-4e60-8f9f-8b48bd2c1a64
+2026-11-22T05:06:38+00:00 | Fallo: AMQPConnectionError | Reintento en 8s
+2026-11-22T05:06:46+00:00 | Intento 5 | ID: de5f5d9f-c292-4e60-8f9f-8b48bd2c1a64
+2026-11-22T05:06:46+00:00 | Publicación confirmada | ID: de5f5d9f-c292-4e60-8f9f-8b48bd2c1a64
