@@ -1,0 +1,20 @@
+FROM python:3.13-slim
+
+WORKDIR /app
+ENV PYTHONPATH=/app/generado:/app
+
+RUN python -m pip install --no-cache-dir \
+    grpcio==1.85.3 grpcio-tools==1.85.3 pika==1.5.0
+
+COPY config/telematica.proto config/telematica.proto
+RUN mkdir -p /app/generado && \
+    python -m grpc_tools.protoc -I config \
+      --python_out=/app/generado \
+      --grpc_python_out=/app/generado \
+      config/telematica.proto
+
+COPY coordinador/ coordinador/
+COPY saga/ taller2/saga/
+
+EXPOSE 50051
+CMD ["python", "-u", "coordinador/coordinador.py"]
