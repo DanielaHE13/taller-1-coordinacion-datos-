@@ -13,6 +13,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--cola", required=True)
     parser.add_argument("--cantidad", type=int, default=1)
+    parser.add_argument("--orden-lamport", action="store_true")
     parser.add_argument("--base", type=Path, default=Path("datos/eventos.sqlite3"))
     opciones = parser.parse_args()
     if opciones.cantidad < 1:
@@ -31,14 +32,22 @@ def main():
 
     with pika.BlockingConnection(parametros) as conexion:
         canal = conexion.channel()
-        for _ in range(opciones.cantidad):
+        def recibir():
             entrega, _, cuerpo = canal.basic_get(
                 queue=opciones.cola, auto_ack=False
             )
             if entrega is None:
-                raise SystemExit(f"No hay más mensajes en {opciones.cola}.")
+                raise SystemExit(f"No hay suficientes mensajes en {opciones.cola}.")
+            return entrega, json.loads(cuerpo)
 
-            evento = json.loads(cuerpo)
+        eventos = (recibir() for _ in range(opciones.cantidad))
+        if opciones.orden_lamport:
+            eventos = sorted(
+                eventos,
+                key=lambda item: (item[1]["lamport_time"], item[1]["node_id"]),
+            )
+
+        for entrega, evento in eventos:
             nuevo = registrar_evento(opciones.base, evento)
             canal.basic_ack(delivery_tag=entrega.delivery_tag)
             estado = "Evento guardado" if nuevo else "Duplicado omitido"
