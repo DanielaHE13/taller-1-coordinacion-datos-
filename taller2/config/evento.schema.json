@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Eventos del Taller 2",
+  "type": "object",
+  "required": ["message_id", "node_id", "lamport_time"],
+  "properties": {
+    "message_id": {"type": "string", "format": "uuid"},
+    "node_id": {"type": "string", "minLength": 1},
+    "lamport_time": {"type": "integer", "minimum": 1},
+    "data": {"type": "object"},
+    "saga_id": {"type": "string", "format": "uuid"},
+    "destinatario": {"type": "string", "minLength": 1},
+    "recurso": {"type": "string", "minLength": 1},
+    "cpu_asignada": {"type": "integer", "minimum": 1},
+    "motivo": {"type": "string", "minLength": 1}
+  },
+  "oneOf": [
+    {
+      "description": "Evento de la cola metrics",
+      "required": ["data"],
+      "not": {"required": ["tipo"]}
+    },
+    {
+      "description": "Confirmación de la cola allocations",
+      "required": ["tipo", "saga_id", "destinatario", "recurso", "cpu_asignada"],
+      "properties": {"tipo": {"const": "asignacion_confirmada"}}
+    },
+    {
+      "description": "Notificación de compensación de la cola failover",
+      "required": ["tipo", "saga_id", "recurso", "motivo"],
+      "properties": {"tipo": {"const": "reserva_compensada"}}
+    }
+  ]
+}
