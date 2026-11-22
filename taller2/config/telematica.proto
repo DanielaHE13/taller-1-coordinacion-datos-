@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package telematics;
+
+// Servicio principal entre el Agente y el Coordinador
+service CoordinatorService {
+  // Reporta métricas periódicamente desde el agente hacia el coordinador
+  rpc ReportMetrics (MetricsReportRequest) returns (MetricsReportResponse);
+
+  // Solicita una asignación de recursos o tareas
+  rpc RequestAllocation (AllocationRequest) returns (AllocationResponse);
+}
+
+// Estructura para el reporte de métricas del agente
+message MetricsReportRequest {
+  string node_id = 1;
+  int64 timestamp = 2;
+  double cpu_usage = 3;
+  double memory_usage = 4;
+  string status = 5;
+}
+
+// Respuesta del coordinador a las métricas
+message MetricsReportResponse {
+  bool acknowledged = 1;
+  string message = 2;
+}
+
+// Solicitud de asignación por parte del agente
+message AllocationRequest {
+  string node_id = 1;
+  string resource_type = 2;
+  int32 requested_amount = 3;
+  int64 lamport_timestamp = 4; // Incluye reloj de Lamport (Sección 3.3)
+}
+
+// Respuesta del coordinador con la asignación correspondiente
+message AllocationResponse {
+  bool success = 1;
+  string allocation_id = 2;
+  string assigned_node = 3;
+  string reason = 4;
+}
