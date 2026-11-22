@@ -27,6 +27,16 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.coordinador
+    environment:
+      TALLER_TOKEN: "${TALLER_TOKEN:?Define TALLER_TOKEN}"
+      RABBITMQ_PASSWORD: "${RABBITMQ_PASSWORD:?Define RABBITMQ_PASSWORD}"
+      RABBITMQ_HOST: rabbitmq
+      SAGA_LIDER_URL: http://inventario3:5000
+      SAGA_REPLICA_URL: http://inventario1:5000
+      SAGA_RESERVAS_URL: http://reservas:50052
+      NODE_ID: coordinador-compose
+    volumes:
+      - sagas_datos:/app/datos
     healthcheck:
       test:
         - CMD
@@ -114,7 +124,21 @@ services:
     volumes:
       - inventario3_datos:/app/datos
 
+  reservas:
+    build:
+      context: .
+      dockerfile: Dockerfile.coordinador
+    command: ["python", "-u", "-m", "taller2.saga.servicio_reservas"]
+    environment:
+      TALLER_TOKEN: "${TALLER_TOKEN:?Define TALLER_TOKEN}"
+      RESERVAS_HOST: 0.0.0.0
+      RESERVAS_CAPACIDAD_CPU: "2"
+    volumes:
+      - reservas_datos:/app/datos
+
 volumes:
+  sagas_datos:
+  reservas_datos:
   rabbitmq_datos:
   redis1_datos:
   inventario1_datos:

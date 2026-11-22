@@ -1,9 +1,11 @@
 from contextlib import closing
+import json
 import sqlite3
 
 
-def iniciar_saga(ruta, saga_id):
+def iniciar_saga(ruta, saga_id, solicitud=None):
     with closing(sqlite3.connect(ruta)) as db, db:
+        db.execute("BEGIN IMMEDIATE")
         db.execute("""
             CREATE TABLE IF NOT EXISTS sagas (
                 saga_id TEXT PRIMARY KEY,
@@ -13,10 +15,33 @@ def iniciar_saga(ruta, saga_id):
                 actualizado_utc TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
             )
         """)
-        db.execute(
+        creada = db.execute(
             "INSERT OR IGNORE INTO sagas (saga_id, estado) VALUES (?, 'en_curso')",
             (saga_id,),
-        )
+        ).rowcount == 1
+        if solicitud is not None:
+            db.execute("""
+                CREATE TABLE IF NOT EXISTS solicitudes_saga (
+                    saga_id TEXT PRIMARY KEY,
+                    solicitud TEXT NOT NULL
+                )
+            """)
+            descripcion = json.dumps(solicitud, sort_keys=True)
+            if creada:
+                db.execute(
+                    "INSERT INTO solicitudes_saga VALUES (?, ?)",
+                    (saga_id, descripcion),
+                )
+            else:
+                anterior = db.execute(
+                    "SELECT solicitud FROM solicitudes_saga WHERE saga_id = ?",
+                    (saga_id,),
+                ).fetchone()
+                if anterior != (descripcion,):
+                    raise ValueError("El ID de Saga pertenece a otra solicitud.")
+        return db.execute(
+            "SELECT estado FROM sagas WHERE saga_id = ?", (saga_id,)
+        ).fetchone()[0]
 
 
 def finalizar_saga(ruta, saga_id, estado):

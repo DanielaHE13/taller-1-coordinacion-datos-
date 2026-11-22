@@ -32,6 +32,7 @@ message AllocationRequest {
   string resource_type = 2;
   int32 requested_amount = 3;
   int64 lamport_timestamp = 4; // Incluye reloj de Lamport (Sección 3.3)
+  string request_id = 5; // UUID que el cliente conserva si reintenta la solicitud.
 }
 
 // Respuesta del coordinador con la asignación correspondiente

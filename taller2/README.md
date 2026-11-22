@@ -41,6 +41,31 @@ docker compose -p taller2-aula -f taller2/docker-compose.yml logs coordinador
 
 En los logs debe aparecer el reporte de `agente-compose`.
 
+## Verificar una asignación real por gRPC en Compose
+
+Usa un proyecto de prueba con inventario nuevo. Con las variables de la primera
+sección todavía exportadas, levanta los componentes del inventario, RabbitMQ,
+el coordinador y la API de reservas:
+
+```bash
+docker compose -p taller2-aula -f taller2/docker-compose.yml \
+  up --build --wait --wait-timeout 120 \
+  coordinador rabbitmq inventario1 inventario2 inventario3 reservas
+```
+
+Cuando el inventario reconozca al nodo 3 como líder, ejecuta:
+
+```bash
+docker compose -p taller2-aula -f taller2/docker-compose.yml \
+  exec -T coordinador python -u -m taller2.saga.probar_grpc
+```
+
+El comando inicializa el recurso de prueba, solicita 1 CPU con un UUID estable
+y reenvía la misma solicitud. Deben aparecer dos confirmaciones con el mismo
+ID y una sola unidad de CPU descontada en la réplica. La API de asignación
+usa el token de inventario como credencial gRPC. El cliente de métricas
+sigue funcionando con el mismo contrato.
+
 ## Contratos y evidencias
 
 - [Contrato gRPC](config/telematica.proto)
