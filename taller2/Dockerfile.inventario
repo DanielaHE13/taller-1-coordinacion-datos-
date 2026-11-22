@@ -1,0 +1,10 @@
+FROM python:3.13-slim
+
+WORKDIR /app
+COPY coordinador/*.py coordinador/
+COPY config/inventario.example.json config/inventario.example.json
+COPY taller2/config/nodos.compose.json config/nodos.compose.json
+
+ENV TALLER_NODOS_CONFIG=/app/config/nodos.compose.json
+STOPSIGNAL SIGINT
+ENTRYPOINT ["python", "-u", "-m", "coordinador.motor"]

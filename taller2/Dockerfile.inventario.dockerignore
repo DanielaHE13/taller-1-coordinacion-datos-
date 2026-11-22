@@ -1,0 +1,8 @@
+**
+!coordinador/
+!coordinador/*.py
+!config/
+!config/inventario.example.json
+!taller2/
+!taller2/config/
+!taller2/config/nodos.compose.json

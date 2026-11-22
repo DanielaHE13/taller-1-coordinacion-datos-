@@ -1,0 +1,5 @@
+{
+  "1": {"host": "inventario1", "puerto": 5000, "redis_host": "redis1"},
+  "2": {"host": "inventario2", "puerto": 5000, "redis_host": "redis2"},
+  "3": {"host": "inventario3", "puerto": 5000, "redis_host": "redis3"}
+}

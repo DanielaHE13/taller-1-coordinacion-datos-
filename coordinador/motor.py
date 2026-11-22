@@ -258,7 +258,8 @@ class Node:
             peer = self.nodes[leader]
             with self.lock:
                 if self.role == "follower" and self.leader == leader:
-                    self.backend.follow(peer["host"], peer.get("redis_port", 6379))
+                    self.backend.follow(peer.get("redis_host", peer["host"]),
+                                        peer.get("redis_port", 6379))
 
     def broadcast_heartbeat(self):
         with self.lock:
@@ -518,7 +519,8 @@ def configuracion_compatible(identificador, archivo=None):
         "capacity": opciones["capacity"],
         "nodes": {
             clave: {"host": nodo["host"], "port": nodo["puerto"],
-                    "redis_port": nodo.get("redis_puerto", 6379)}
+                    "redis_port": nodo.get("redis_puerto", 6379),
+                    "redis_host": nodo.get("redis_host", nodo["host"])}
             for clave, nodo in nodos.items()
         },
     }
@@ -533,9 +535,14 @@ def main_compatible():
     password = os.environ.get("REDIS_PASSWORD", "")
     if not password or len(token) < 16:
         parser.error("Cargar .env con TALLER_TOKEN y REDIS_PASSWORD")
-    config = configuracion_compatible(args.identificador)
+    config = configuracion_compatible(
+        args.identificador, os.environ.get("TALLER_NODOS_CONFIG")
+    )
+    nodo_local = config["nodes"][str(args.identificador)]
     node = Node(config, token, RedisBackend(
-        password, config["nodes"][str(args.identificador)]["redis_port"]))
+        password, nodo_local["redis_port"],
+        host=os.environ.get("TALLER_REDIS_HOST", "127.0.0.1"),
+    ))
     try:
         node.serve()
     except KeyboardInterrupt:

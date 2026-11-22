@@ -1,3 +1,27 @@
+x-inventario: &inventario
+  build:
+    context: ..
+    dockerfile: taller2/Dockerfile.inventario
+  environment: &inventario_env
+    TALLER_TOKEN: "${TALLER_TOKEN:?Define TALLER_TOKEN}"
+    REDIS_PASSWORD: "${REDIS_PASSWORD:?Define REDIS_PASSWORD}"
+
+x-redis: &redis
+  build:
+    context: .
+    dockerfile: Dockerfile.redis
+  environment:
+    REDIS_PASSWORD: "${REDIS_PASSWORD:?Define REDIS_PASSWORD}"
+  command:
+    - sh
+    - -ec
+    - 'exec redis-server --appendonly yes --requirepass "$$REDIS_PASSWORD" --masterauth "$$REDIS_PASSWORD"'
+  healthcheck:
+    test: ["CMD-SHELL", 'REDISCLI_AUTH="$$REDIS_PASSWORD" redis-cli ping | grep -qx PONG']
+    interval: 3s
+    timeout: 3s
+    retries: 10
+
 services:
   coordinador:
     build:
@@ -39,5 +63,62 @@ services:
       timeout: 5s
       retries: 10
 
+  redis1:
+    <<: *redis
+    volumes:
+      - redis1_datos:/data
+
+  inventario1:
+    <<: *inventario
+    command: ["1", "--inventario"]
+    environment:
+      <<: *inventario_env
+      TALLER_REDIS_HOST: redis1
+    depends_on:
+      redis1:
+        condition: service_healthy
+    volumes:
+      - inventario1_datos:/app/datos
+
+  redis2:
+    <<: *redis
+    volumes:
+      - redis2_datos:/data
+
+  inventario2:
+    <<: *inventario
+    command: ["2", "--inventario"]
+    environment:
+      <<: *inventario_env
+      TALLER_REDIS_HOST: redis2
+    depends_on:
+      redis2:
+        condition: service_healthy
+    volumes:
+      - inventario2_datos:/app/datos
+
+  redis3:
+    <<: *redis
+    volumes:
+      - redis3_datos:/data
+
+  inventario3:
+    <<: *inventario
+    command: ["3", "--inventario"]
+    environment:
+      <<: *inventario_env
+      TALLER_REDIS_HOST: redis3
+    depends_on:
+      redis3:
+        condition: service_healthy
+    volumes:
+      - inventario3_datos:/app/datos
+
 volumes:
   rabbitmq_datos:
+  redis1_datos:
+  inventario1_datos:
+  redis2_datos:
+  inventario2_datos:
+  redis3_datos:
+  inventario3_datos:

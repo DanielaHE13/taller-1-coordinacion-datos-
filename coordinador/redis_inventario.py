@@ -13,8 +13,9 @@ class RedisError(RuntimeError):
 
 
 class RedisBackend:
-    def __init__(self, password, port=6379, timeout=2):
+    def __init__(self, password, port=6379, timeout=2, *, host="127.0.0.1"):
         self.password, self.port, self.timeout = password, port, timeout
+        self.host = host
 
     @staticmethod
     def _send(stream, *args):
@@ -48,7 +49,7 @@ class RedisBackend:
         raise RedisError("Tipo RESP no soportado")
 
     def command(self, *args):
-        with socket.create_connection(("127.0.0.1", self.port), self.timeout) as sock:
+        with socket.create_connection((self.host, self.port), self.timeout) as sock:
             with sock.makefile("rwb") as stream:
                 self._send(stream, "AUTH", self.password)
                 self._read(stream)
