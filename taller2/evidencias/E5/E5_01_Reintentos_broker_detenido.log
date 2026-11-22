@@ -1,0 +1,19 @@
+# Taller 2 · E5 · Extracto de la salida del productor en el nodo 2
+# Hora de los registros: UTC. Se omitieron el prompt y el aviso de Pika.
+
+2026-11-22T04:58:21+00:00 | Intento 1 | ID: b8f1316e-34e5-4a48-909f-d28ec190706e
+2026-11-22T04:58:21+00:00 | Fallo: AMQPConnectionError | Reintento en 2s
+2026-11-22T04:58:23+00:00 | Intento 2 | ID: b8f1316e-34e5-4a48-909f-d28ec190706e
+2026-11-22T04:58:23+00:00 | Fallo: AMQPConnectionError | Reintento en 4s
+2026-11-22T04:58:27+00:00 | Intento 3 | ID: b8f1316e-34e5-4a48-909f-d28ec190706e
+2026-11-22T04:58:27+00:00 | Fallo: AMQPConnectionError | Reintento en 8s
+2026-11-22T04:58:35+00:00 | Intento 4 | ID: b8f1316e-34e5-4a48-909f-d28ec190706e
+2026-11-22T04:58:35+00:00 | Fallo: AMQPConnectionError | Reintento en 8s
+2026-11-22T04:58:43+00:00 | Intento 5 | ID: b8f1316e-34e5-4a48-909f-d28ec190706e
+2026-11-22T04:58:43+00:00 | Fallo: AMQPConnectionError | Reintento en 8s
+2026-11-22T04:58:51+00:00 | Intento 6 | ID: b8f1316e-34e5-4a48-909f-d28ec190706e
+2026-11-22T04:58:51+00:00 | Fallo: AMQPConnectionError | Reintento en 8s
+2026-11-22T04:58:59+00:00 | Intento 7 | ID: b8f1316e-34e5-4a48-909f-d28ec190706e
+2026-11-22T04:58:59+00:00 | Fallo: AMQPConnectionError | Reintento en 8s
+2026-11-22T04:59:07+00:00 | Intento 8 | ID: b8f1316e-34e5-4a48-909f-d28ec190706e
+Se agotaron los intentos:
