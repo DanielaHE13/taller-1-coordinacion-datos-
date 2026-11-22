@@ -1,0 +1,25 @@
+services:
+  coordinador:
+    build:
+      context: .
+      dockerfile: Dockerfile.coordinador
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import grpc; grpc.channel_ready_future(grpc.insecure_channel('127.0.0.1:50051')).result(timeout=2)"
+      interval: 3s
+      timeout: 3s
+      retries: 5
+
+  agente:
+    build:
+      context: .
+      dockerfile: Dockerfile.agente
+    environment:
+      COORDINADOR_HOST: coordinador
+      NODE_ID: agente-compose
+    depends_on:
+      coordinador:
+        condition: service_healthy

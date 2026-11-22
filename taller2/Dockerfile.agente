@@ -1,0 +1,19 @@
+FROM python:3.13-slim
+
+WORKDIR /app
+ENV PYTHONPATH=/app/generado:/app
+
+RUN python -m pip install --no-cache-dir \
+    grpcio==1.85.3 grpcio-tools==1.85.3
+
+COPY config/telematica.proto config/telematica.proto
+RUN mkdir -p /app/generado && \
+    python -m grpc_tools.protoc -I config \
+      --python_out=/app/generado \
+      --grpc_python_out=/app/generado \
+      config/telematica.proto
+
+COPY productor/agente.py productor/agente.py
+COPY productor/ejecutar_metricas.py productor/ejecutar_metricas.py
+
+CMD ["python", "-u", "-m", "productor.ejecutar_metricas"]
